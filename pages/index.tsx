@@ -24,7 +24,7 @@ export default function Home() {
                 <p className="comment--small--grey">серый текст</p>
                 <p className="color-primary">серый текст</p>
                 <p className="color-secondary">серый текст</p>
-                <a href="#">Ссылка на что-либо</a>
+                <a href="#">Ссылка на что-либ2о</a>
 
                 {/* <ReactLogo fill="red" /> */ }
                 <div>
