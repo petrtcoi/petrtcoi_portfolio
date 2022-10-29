@@ -22,8 +22,7 @@ export default function Home() {
                 <h2>Заголовок2</h2>
                 <p>Обычный текст</p>
                 <p className="comment--small--grey">серый текст</p>
-                <p className="color-primary">серый текст</p>
-                <p className="color-secondary">серый текст</p>
+                <p className="text-accent">акцент на тексте</p>
                 <a href="#">Ссылка на что-либ2о</a>
 
                 {/* <ReactLogo fill="red" /> */ }

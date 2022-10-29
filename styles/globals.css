@@ -20,19 +20,22 @@ h3 {
   font-weight: 400;
 }
 
+
+/* Ссылка */
 a {
+  text-decoration: underline;
+  color: var(--color-text-main)
+}
+a:hover {
   text-decoration: none;
-  color: var(--color-link-blue)
+  text-decoration-thickness: 0.5px;
 }
 
 
-.color-primary {
-  color: var(--color-primary)
+/* Тексты */
+.text-accent {
+  color: var(--color-accent);
 }
-.color-secondary {
-  color: var(--color-secondary)
-}
-
 
 .comment--small--grey {
   color: var(--color-grey);

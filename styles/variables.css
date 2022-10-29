@@ -2,9 +2,7 @@
   --background: white;
   
   --color-text-main: black;
-  --color-primary:#ee6e73;
-  --color-secondary: #26a69a;
-  --color-link-blue: #039be5;
+  --color-accent:#ee6e73;
   --color-grey: #999999;
 }
 [data-theme="dark"] {
