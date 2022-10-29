@@ -1,13 +1,15 @@
 :root {
   --background: white;
-  --text-primary: black;
   
-  --grey: #999999;
+  --color-text-main: black;
+  --color-primary:#ee6e73;
+  --color-secondary: #26a69a;
+  --color-link-blue: #039be5;
+  --color-grey: #999999;
 }
 [data-theme="dark"] {
   --background: black;
-  --text-primary: #DDDDDD;
 
-  --grey: #999999;
+  --color-text-main: #DDDDDD;
 }
 
