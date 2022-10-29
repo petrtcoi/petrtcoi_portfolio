@@ -10,7 +10,7 @@ export default function Home() {
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", "light")
         setTimeout(() => document.documentElement.setAttribute("data-theme", "dark"), 2000)
-        setTimeout(() => document.documentElement.setAttribute("data-theme", "light"), 4000)
+        setTimeout(() =>  document.documentElement.setAttribute("data-theme", "light"), 4000)
 
     }, [])
 
