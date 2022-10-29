@@ -5,8 +5,9 @@ import { useEffect } from 'react'
 export default function Home() {
 
   useEffect(() => {
-    // document.documentElement.setAttribute("data-theme", "dar1k")
+    document.documentElement.setAttribute("data-theme", "light")
     setTimeout(() => document.documentElement.setAttribute("data-theme", "dark"), 2000)
+    setTimeout(() => document.documentElement.setAttribute("data-theme", "light"), 4000)
 
   }, [])
 
@@ -15,7 +16,8 @@ export default function Home() {
       <main>
         <h1>Заголовок 1</h1>
         <h2>Заголовок2</h2>
-        Обычный текст
+        <p>Обычный текст</p>
+        <p className="comment--small--grey">серый текст</p>
       </main>
     </div>
   )
