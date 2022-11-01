@@ -14,6 +14,24 @@ describe('Header', () => {
 
     describe('Popup Menu', () => {
 
+
+        test('Выводится логотип React', () => {
+            render(<Header/>)
+            expect(screen.getByTestId('react-logo')).toBeVisible()
+        })
+
+        test('Выводится Заголовок в шапке', () => {
+            render(<Header/>)
+            expect(screen.getByTestId('header-title')).toBeVisible()
+        })
+
+
+        test('Скриншот тест для верстки', () => {
+            const container = render(<Header/>)
+            expect(container).toMatchSnapshot()
+        })
+
+
         test('Есть бургер, кнопка для открытия меню', () => {
             render(<Header />)
             expect(screen.getByTestId('popupmenu-burger-button')).toBeVisible()

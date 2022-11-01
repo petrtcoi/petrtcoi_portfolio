@@ -1,4 +1,4 @@
-.header {
+.header-title {
   font-family: Raleway, Helvetica, sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
@@ -16,8 +16,10 @@
 
   background-color: var(--background);
   border-left: 1px solid var(--color-grey);
+  
   transition: margin 0.5s;
 }
 .popup-menu[data-popupmenu-status="open"] {
   margin-right: 0px;
+  transition: margin 0.5s;
 }

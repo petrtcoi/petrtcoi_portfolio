@@ -12,38 +12,49 @@ type HeaderProps = {}
 
 const Header: FC<HeaderProps> = (_props) => {
 
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+    const [menuStatus, setMenuStatus] = useState<MenuStatus>(MenuStatus.closed)
 
     return (
         <header data-testid="header">
-            <div>
+
+
+            <div
+                data-testid="react-logo"
+            >
                 <ReactLogo size={ 50 } />
             </div>
+
+
             <div
-                className={ styles.header }
-            >
+                data-testid="header-title"
+                className={ styles["header-title"] } >
                 Petr Tcoi
             </div>
 
 
             <div
-                onClick={ () => setIsMenuOpen(true) }
                 data-testid="popupmenu-burger-button"
+                onClick={ () => setMenuStatus(MenuStatus.open) }
             >
                 <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
             </div>
-            <div
+
+
+            <div data-testid="popup-menu"
+                data-popupmenu-status={ menuStatus }
                 className={ styles['popup-menu'] }
-                data-popupmenu-status={ isMenuOpen ? MenuStatus.open : MenuStatus.closed }
-                data-testid="popup-menu"
-                hidden={isMenuOpen ? false : true}
+                style={ { opacity: menuStatus === MenuStatus.closed ? 0 : 100 } }
             >
                 <PopupMenu
-                    closeMenuFunc={ () => setIsMenuOpen(false) }
+                    closeMenuFunc={ () => setMenuStatus(MenuStatus.closed) }
                 />
             </div>
+
+
         </header>
     )
 }
 
 export default Header
+
+
