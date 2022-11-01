@@ -1,6 +1,8 @@
 import Head from "next/head"
 import { ReactNode } from "react"
+import Footer from "./Footer"
 
+import Header from "./Header"
 
 interface LayoutProps {
     children: ReactNode
@@ -14,7 +16,8 @@ const Layout = ({ children }: LayoutProps) => {
                 {/* Общее */ }
                 <meta charSet="utf-8" />
                 <title>React разработка. Портфолио Petr Tcoi</title>
-                <meta name="description" content="Сайт-портфолио от Petr Tcoi. Работаю с ReactJS / NextJS. Открыт к предложениям."/>
+                <meta name="description" content="Сайт-портфолио от Petr Tcoi. Работаю с ReactJS / NextJS. Открыт к предложениям." />
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
 
                 {/* Favicons */ }
                 <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
@@ -24,15 +27,13 @@ const Layout = ({ children }: LayoutProps) => {
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff"></meta>
             </Head>
-            <header>
-
-            </header>
-            <main>
-                { children }
-            </main>
-            <footer>
-                ƒ
-            </footer>
+            <div className="layout">
+                <Header />
+                <main>
+                    { children }
+                </main>
+                <Footer />
+            </div>
         </>
     )
 }
