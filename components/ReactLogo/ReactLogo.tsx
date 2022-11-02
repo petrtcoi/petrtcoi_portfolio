@@ -14,7 +14,7 @@ const ReactLogo: FC<ReactLogoProps> = (props) => {
             width={ props.size  }
             height={ props.size }
             alt={props.alt ? props.alt : "Логотип React. На котором пишет Petr Tcoi"}
-
+            title={props.alt ? props.alt : "Логотип React. На котором хорошо пишет Petr Tcoi"}
             style={ {
                 filter: "invert(51%) sepia(85%) saturate(2665%) hue-rotate(322deg) brightness(111%) contrast(99%)"
             } }
