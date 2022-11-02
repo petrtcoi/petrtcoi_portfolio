@@ -1,11 +1,11 @@
+import React from "react"
 import Head from "next/head"
-import { ReactNode } from "react"
-import Footer from "./Footer"
 
+import Footer from "./Footer"
 import Header from "./Header"
 
 interface LayoutProps {
-    children: ReactNode
+    children: React.ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {

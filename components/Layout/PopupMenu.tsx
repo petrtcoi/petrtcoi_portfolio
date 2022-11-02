@@ -1,4 +1,5 @@
 import React from 'react'
+
 import CancelIcon from '../../assets/icons/CancelIcon'
 import ThemeSwitcher from '../ui-components/ThemeSwitcher/ThemeSwitcher'
 

@@ -1,10 +1,11 @@
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
+
 import EmailIcon from '../../assets/icons/EmailIcon'
 import LinkedinIcon from '../../assets/icons/LinkedinIcon'
 import TelegramIcon from '../../assets/icons/TelegramIcon'
 
-import styles from './css/contactinfo.module.css'
+import styles from './css/styles.module.css'
 
 const ContactInfo: React.FC = () => {
 

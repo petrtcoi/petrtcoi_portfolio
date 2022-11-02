@@ -1,19 +1,21 @@
+import React from "react"
 import Link from "next/link"
-import { FC, useState } from "react"
-import BurgerMenuIcon from "../../assets/icons/BurgerMenuIcon"
-import { MenuStatus } from "../../typings/ui"
 
+import BurgerMenuIcon from "../../assets/icons/BurgerMenuIcon"
+import PopupMenu from "./PopupMenu"
 import ReactLogo from "./../../assets/icons/ReactLogo"
 
+import { MenuStatus } from "../../typings/ui"
+
 import styles from './css/layout.module.css'
-import PopupMenu from "./PopupMenu"
+
 
 
 type HeaderProps = {}
 
-const Header: FC<HeaderProps> = (_props) => {
+const Header: React.FC<HeaderProps> = (_props) => {
 
-    const [menuStatus, setMenuStatus] = useState<MenuStatus>(MenuStatus.closed)
+    const [menuStatus, setMenuStatus] = React.useState<MenuStatus>(MenuStatus.closed)
 
 
     return (

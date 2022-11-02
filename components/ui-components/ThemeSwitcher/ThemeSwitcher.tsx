@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { styled } from '@mui/material/styles'
 import Switch from '@mui/material/Switch'
 
@@ -25,7 +24,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (_props) => {
             </div>
             <div>
                 <MaterialUISwitch
-                    defaultChecked={ false }
+                    defaultChecked={ true }
                     onChange={toggleTheme}
                 />
             </div>
