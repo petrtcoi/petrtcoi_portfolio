@@ -10,14 +10,7 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
 
     return (
         <div>
-            <CancelButtonBlock />
-            <ThemeSwitcherBlock />
-        </div>
-    )
-
-    
-    function CancelButtonBlock() {
-        return (
+            {/* ЗАКРЫТЬ МЕНЮ */}
             <div
                 style={ { display: 'inline-block' } }
                 onClick={ props.closeMenuFunc }
@@ -25,16 +18,18 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
             >
                 <CancelIcon size={ 35 } className={ "icon-button" } />
             </div>
-        )
-    }
-    function ThemeSwitcherBlock() {
-        return (
-            <>
-                <h3 style={ { textAlign: "center" } }>Переключение темы</h3>
+
+
+            {/* СМЕНА ТЕМЫ */}
+            <div style={{marginTop: "30px"}}>
+                <h3 style={ { textAlign: "center", marginBottom: "20px" } }>Переключение темы</h3>
                 <ThemeSwitcher />
-            </>
-        )
-    }
+            </div>
+
+        </div>
+    )
+
+    
 
 }
 

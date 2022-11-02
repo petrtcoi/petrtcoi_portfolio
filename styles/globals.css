@@ -1,10 +1,12 @@
 html,
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1200px;
 
   font-family: Roboto, sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 28px;
 
   color: var(--color-text-main);
   background-color: var(--background);
@@ -19,7 +21,6 @@ body {
 
 
 main {
-  display: flex;
   flex-grow: 1;
   padding:  var(--padding-content-desktop);
 }
@@ -33,7 +34,7 @@ header, footer {
 }
 
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   main {
     padding: var(--padding-content-large)
   }
@@ -41,7 +42,7 @@ header, footer {
     padding: var(--padding-header-large);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   main {
     padding: var(--padding-content-tablet)
   }
@@ -49,7 +50,7 @@ header, footer {
     padding: var(--padding-header-tablet);
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   main {
     padding: var(--padding-content-mobile)
   }
@@ -67,6 +68,8 @@ header, footer {
 /* Заголовки */
 
 h1 {
+  margin: 0;
+  padding: 0;
   font-family: Raleway, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
@@ -74,19 +77,19 @@ h1 {
 
 h2,
 h3 {
+  margin: 0;
+  padding: 0;
   font-family: Raleway, Helvetica, Arial, sans-serif;
   font-weight: 600;
+
 }
 
 /* Ссылка */
 a {
-  text-decoration: underline;
-  color: var(--color-text-main);
-}
-a:hover {
   text-decoration: none;
-  text-decoration-thickness: 0.5px;
+  color: var(--color-blue);
 }
+
 
 .icon-button {
   cursor: pointer;
@@ -99,6 +102,10 @@ a:hover {
 
 
 /* Тексты */
+p {
+  margin: 1.2em 0;
+}
+
 .text-accent {
   color: var(--color-accent);
 }
@@ -107,4 +114,11 @@ a:hover {
   color: var(--color-grey);
   font-weight: 300;
   font-size: 0.75rem;
+}
+
+.text--larger {
+  font-size: 1.3rem;
+  line-height: 1.4em;
+  font-weight: 200;
+  /* font-weight: 200; */
 }

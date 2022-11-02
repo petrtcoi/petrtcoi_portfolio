@@ -12,17 +12,17 @@
   --padding-header-desktop: 10px 40px;
   --padding-header-large: 10px 60px;
 
-  --padding-content-mobile: 0px 10px;
-  --padding-content-tablet: 0px 20px;
-  --padding-content-desktop: 0px 60px;
-  --padding-content-large: 0px 140px;
+  --padding-content-mobile: 40px 10px;
+  --padding-content-tablet: 50px 20px;
+  --padding-content-desktop: 50px 60px;
+  --padding-content-large: 80px 140px;
 
   --change-theme-duration: 0.5s;
 
 }
 [data-theme="dark"] {
   --background: black;
-  --color-text-main: #DDDDDD;
+  --color-text-main: #bab7b7;
 }
 
 

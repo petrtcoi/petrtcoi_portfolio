@@ -1,0 +1,11 @@
+.portfolio-image {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.information {
+  flex: 3;
+  min-width: 400px;
+}

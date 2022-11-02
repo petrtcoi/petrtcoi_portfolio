@@ -18,9 +18,28 @@ const Header: FC<HeaderProps> = (_props) => {
     return (
         <header data-testid="header">
 
+            {/* LOGO */}
             <ReactLogo size={ 50 } />
-            <HeaderTitle />
-            <BurgerMenu />
+        
+
+            {/* TITLE */}
+            <div
+                data-testid="header-title"
+                className={ styles["header-title"] } >
+                Petr Tcoi
+            </div>
+
+
+            {/* BURGER MENU */}
+            <div
+                data-testid="popupmenu-burger-button"
+                onClick={ () => setMenuStatus(MenuStatus.open) }
+            >
+                <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
+            </div>
+
+
+            {/* POPUPMENU */}
             <div data-testid="popup-menu"
                 data-popupmenu-status={ menuStatus }
                 className={ styles['popup-menu'] }
@@ -34,41 +53,6 @@ const Header: FC<HeaderProps> = (_props) => {
         </header>
     )
 
-
-
-    function HeaderTitle() {
-        return (
-            <div
-                data-testid="header-title"
-                className={ styles["header-title"] } >
-                Petr Tcoi
-            </div>
-        )
-    }
-    function BurgerMenu() {
-        return (
-            <div
-                data-testid="popupmenu-burger-button"
-                onClick={ () => setMenuStatus(MenuStatus.open) }
-            >
-                <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
-            </div>
-        )
-    }
-
-    function PopupMenuBlock() {
-        return (
-            <div data-testid="popup-menu"
-                data-popupmenu-status={ menuStatus }
-                className={ styles['popup-menu'] }
-                style={ { opacity: menuStatus === MenuStatus.closed ? 0 : 100 } }
-            >
-                <PopupMenu
-                    closeMenuFunc={ () => setMenuStatus(MenuStatus.closed) }
-                />
-            </div>
-        )
-    }
 }
 
 export default Header
