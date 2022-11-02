@@ -1,5 +1,6 @@
 import React from 'react'
 import CancelIcon from '../../assets/icons/CancelIcon'
+import ThemeSwitcher from '../elements/ThemeSwitcher/ThemeSwitcher'
 
 type PopupMenuProps = {
     closeMenuFunc: () => void
@@ -16,9 +17,8 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
             >
                 <CancelIcon size={ 35 } className={ "icon-button" } />
             </div>
-            <p>Привет. Я - меню.</p>
-            <p>Во мне нет никакого смысла, кроме демонстрации того, что я есть.</p>
-            <p>Я реализовано силами только CSS + изменением значения data-... в родительском node.</p>
+            <h3 style={ { textAlign: "center" } }>Переключение темы</h3>
+            <ThemeSwitcher />
         </div>
     )
 

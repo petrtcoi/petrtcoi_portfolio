@@ -8,6 +8,7 @@ body {
 
   color: var(--color-text-main);
   background-color: var(--background);
+  transition: background-color  0.5s;
 }
 
 

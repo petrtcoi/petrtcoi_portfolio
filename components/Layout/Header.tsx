@@ -1,8 +1,8 @@
 import { FC, useState } from "react"
 import BurgerMenuIcon from "../../assets/icons/BurgerMenuIcon"
-import { MenuStatus } from "../../typings/status"
+import { MenuStatus } from "../../typings/ui"
 
-import ReactLogo from "../ReactLogo/ReactLogo"
+import ReactLogo from "../elements/ReactLogo/ReactLogo"
 
 import styles from './css/layout.module.css'
 import PopupMenu from "./PopupMenu"
@@ -30,6 +30,7 @@ const Header: FC<HeaderProps> = (_props) => {
                 className={ styles["header-title"] } >
                 Petr Tcoi
             </div>
+
 
 
             <div

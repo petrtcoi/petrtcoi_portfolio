@@ -1,18 +1,10 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import PageTitle from '../components/helpers/PageTitle'
 
 
 
 export default function Home() {
 
-    useEffect(() => {
-        document.documentElement.setAttribute("data-theme", "light")
-        setTimeout(() => document.documentElement.setAttribute("data-theme", "dark"), 2000)
-        setTimeout(() =>  document.documentElement.setAttribute("data-theme", "light"), 4000)
-
-    }, [])
 
     return (
         <div data-testid="page-home">

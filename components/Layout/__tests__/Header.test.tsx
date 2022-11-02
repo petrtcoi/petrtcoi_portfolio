@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 
 import userEvent from '@testing-library/user-event'
 import Header from '../Header'
-import { MenuStatus } from '../../../typings/status'
+import { MenuStatus } from '../../../typings/ui'
 
 
 
@@ -27,7 +27,7 @@ describe('Header', () => {
 
         test('Скриншот тест для верстки', () => {
             const container = render(<Header />)
-            // expect(container).toMatchSnapshot()
+            expect(container).toMatchSnapshot()
         })
 
 
