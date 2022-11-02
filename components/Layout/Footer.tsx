@@ -6,8 +6,9 @@ const Footer: FC<FooterProps> = (_props) => {
 
     return (
         <footer
-            data-testid={"footer"}
-            style={ { backgroundColor: "#eeeeee" } }>
+            data-testid={ "footer" }
+            style={ { backgroundColor: "#eeeeee" } }
+        >
             Footer
         </footer>
     )

@@ -17,6 +17,8 @@
   --padding-content-desktop: 0px 60px;
   --padding-content-large: 0px 140px;
 
+  --change-theme-duration: 0.5s;
+
 }
 [data-theme="dark"] {
   --background: black;

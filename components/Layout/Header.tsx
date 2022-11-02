@@ -14,33 +14,13 @@ const Header: FC<HeaderProps> = (_props) => {
 
     const [menuStatus, setMenuStatus] = useState<MenuStatus>(MenuStatus.closed)
 
+
     return (
         <header data-testid="header">
 
-
-            <div
-                data-testid="react-logo"
-            >
-                <ReactLogo size={ 50 } />
-            </div>
-
-
-            <div
-                data-testid="header-title"
-                className={ styles["header-title"] } >
-                Petr Tcoi
-            </div>
-
-
-
-            <div
-                data-testid="popupmenu-burger-button"
-                onClick={ () => setMenuStatus(MenuStatus.open) }
-            >
-                <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
-            </div>
-
-
+            <ReactLogo size={ 50 } />
+            <HeaderTitle />
+            <BurgerMenu />
             <div data-testid="popup-menu"
                 data-popupmenu-status={ menuStatus }
                 className={ styles['popup-menu'] }
@@ -51,11 +31,48 @@ const Header: FC<HeaderProps> = (_props) => {
                 />
             </div>
 
-
         </header>
     )
+
+
+
+    function HeaderTitle() {
+        return (
+            <div
+                data-testid="header-title"
+                className={ styles["header-title"] } >
+                Petr Tcoi
+            </div>
+        )
+    }
+    function BurgerMenu() {
+        return (
+            <div
+                data-testid="popupmenu-burger-button"
+                onClick={ () => setMenuStatus(MenuStatus.open) }
+            >
+                <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
+            </div>
+        )
+    }
+
+    function PopupMenuBlock() {
+        return (
+            <div data-testid="popup-menu"
+                data-popupmenu-status={ menuStatus }
+                className={ styles['popup-menu'] }
+                style={ { opacity: menuStatus === MenuStatus.closed ? 0 : 100 } }
+            >
+                <PopupMenu
+                    closeMenuFunc={ () => setMenuStatus(MenuStatus.closed) }
+                />
+            </div>
+        )
+    }
 }
 
 export default Header
+
+
 
 

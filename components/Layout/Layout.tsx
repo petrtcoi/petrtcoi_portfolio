@@ -27,7 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff"></meta>
             </Head>
-            <div className="layout">
+            <div >
                 <Header />
                 <main>
                     { children }
