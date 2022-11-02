@@ -8,7 +8,7 @@ type BurgerMenuIconProps = {
 const BurgerMenuIcon: React.FC<BurgerMenuIconProps> = (props) => {
     return (
         <div className={ props.className } aria-label={"Кнопка открыть меню"}>
-            <svg viewBox="0 0 100 75" width={ props.size } height={ props.size } >
+            <svg viewBox="0 0 100 100" width={ props.size } height={ props.size } >
                 <rect width="100" height="15" />
                 <rect y="30" width="100" height="15" />
                 <rect y="60" width="100" height="15" />

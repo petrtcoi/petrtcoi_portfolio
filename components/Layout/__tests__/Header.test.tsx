@@ -35,6 +35,7 @@ describe('Header', () => {
             render(<Header />)
             expect(screen.getByTestId('popupmenu-burger-button')).toBeVisible()
         })
+
         test('Popup меню скрыто и имеет статус закрыто', () => {
             render(<Header />)
             const popupMenu = screen.getByTestId('popup-menu')
@@ -49,6 +50,14 @@ describe('Header', () => {
             expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.open)
             expect(popupMenu).toBeVisible()
         })
+
+        test('Клик по бургеру делает ставит на него свойстро "скрыть"', async () => {
+            render(<Header />)
+            const burgerButton = screen.getByTestId('popupmenu-burger-button')
+            await userEvent.click(burgerButton)
+            expect(burgerButton.dataset.shouldHide).toBe("true")
+        })
+
 
         test('Клик по крестику меняет статус на закрыто и не видно', async () => {
             render(<Header />)

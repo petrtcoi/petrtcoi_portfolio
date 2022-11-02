@@ -1,15 +1,18 @@
-import { FC } from "react"
+import React from "react"
+
 
 type FooterProps = {}
 
-const Footer: FC<FooterProps> = (_props) => {
+const Footer: React.FC<FooterProps> = (_props) => {
 
     return (
-        <footer
-            data-testid={ "footer" }
-            style={ { backgroundColor: "#eeeeee" } }
-        >
-            Footer
+        <footer data-testid={ "footer" }>
+            <div className="text--small" style={{textAlign: "center"}}>
+                <div>Открыт для любых предложений</div>
+                <div>Публицация на dev.to и vc.ru</div>
+
+            </div>
+            <div className="text--small"></div>
         </footer>
     )
 }

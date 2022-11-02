@@ -9,3 +9,8 @@
   flex: 3;
   min-width: 400px;
 }
+@media (min-width: 800px) {
+  .information {
+    padding-left: 30px;
+  }
+}
