@@ -22,4 +22,5 @@
 .popup-menu[data-popupmenu-status="open"] {
   margin-right: 0px;
   transition: margin 0.5s;
+  transition-timing-function: ease-out;
 }

@@ -15,18 +15,18 @@ describe('Header', () => {
 
 
         test('Выводится логотип React', () => {
-            render(<Header/>)
+            render(<Header />)
             expect(screen.getByTestId('react-logo')).toBeVisible()
         })
 
         test('Выводится Заголовок в шапке', () => {
-            render(<Header/>)
+            render(<Header />)
             expect(screen.getByTestId('header-title')).toBeVisible()
         })
 
 
         test('Скриншот тест для верстки', () => {
-            const container = render(<Header/>)
+            const container = render(<Header />)
             // expect(container).toMatchSnapshot()
         })
 
@@ -53,6 +53,7 @@ describe('Header', () => {
         test('Клик по крестику меняет статус на закрыто и не видно', async () => {
             render(<Header />)
             const popupMenu = screen.getByTestId('popup-menu')
+
             await userEvent.click(screen.getByTestId('popupmenu-burger-button'))
             await userEvent.click(screen.getByTestId('popupmenu-close-button'))
             expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.closed)
