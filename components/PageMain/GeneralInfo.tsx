@@ -7,8 +7,7 @@ type GeneralInfoProps = {}
 const GeneralInfo: React.FC<GeneralInfoProps> = (_props) => {
     return (
         <div className={ styles["general-info"] }>
-            <h1>Добро пожаловать на мой сайт</h1>
-            <p className="text--large">
+            <p className="text--large" style={{marginTop: "0px"}}>
                 Привет! Меня зовут Петр. Я создал этот сайт в качестве своего портфолио. Здесь буду выкладывать &quot;лабораторные&quot; работы и ссылки на их описание.
             </p>
             <p>

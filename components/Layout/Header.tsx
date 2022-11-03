@@ -51,7 +51,6 @@ const Header: React.FC<HeaderProps> = (_props) => {
             <div data-testid="popup-menu"
                 data-popupmenu-status={ menuStatus }
                 className={ styles['popup-menu'] }
-                style={ { opacity: menuStatus === MenuStatus.closed ? 0 : 100 } }
             >
                 <PopupMenu
                     closeMenuFunc={ () => setMenuStatus(MenuStatus.closed) }
