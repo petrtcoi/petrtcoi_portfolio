@@ -8,6 +8,8 @@ const PortfolioImage: React.FC<PortfolioImageProps> = (_props) => {
     return (
         <Image
             src={ "/images/portfolio-image.jpg" }
+            priority
+
             width={200}
             height={200}
             sizes="300px"
