@@ -120,7 +120,9 @@ exports[`Header Popup Menu Snapshot test - начальное состояние
               <div>
                 cветлая
               </div>
-              <div>
+              <div
+                data-testid="theme-switcher"
+              >
                 <span
                   class="MuiSwitch-root MuiSwitch-sizeMedium css-lk9ido-MuiSwitch-root"
                 >
@@ -276,7 +278,9 @@ exports[`Header Popup Menu Snapshot test - после клика по бурге
               <div>
                 cветлая
               </div>
-              <div>
+              <div
+                data-testid="theme-switcher"
+              >
                 <span
                   class="MuiSwitch-root MuiSwitch-sizeMedium css-lk9ido-MuiSwitch-root"
                 >

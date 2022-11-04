@@ -1,4 +1,5 @@
 import { test, expect, type Page, Locator } from '@playwright/test'
+import { pages } from './helpers/pages'
 
 
 
@@ -12,7 +13,7 @@ test.describe('Работа кнопки открытия и закрытия м
 
     test.beforeAll(async ({ browser }) => {
         page = await browser.newPage()
-        await page.goto('http://localhost:3000/')
+        await page.goto(pages.home)
 
         burgerIcon = page.getByTestId('popupmenu-burger-button')
         popupMenu = page.getByTestId('popup-menu')

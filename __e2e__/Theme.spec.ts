@@ -1,9 +1,10 @@
 import { test, expect, type Page, Locator } from '@playwright/test'
 import { Theme } from '../typings/ui'
+import { pages } from './helpers/pages'
 
 
 
-test.describe('Работа кнопки открытия и закрытия меню', () => {
+test.describe('Theme swicthing', () => {
 
     let page: Page
     let themeSwitcher: Locator
@@ -11,8 +12,9 @@ test.describe('Работа кнопки открытия и закрытия м
     let htmlTag: Locator
 
     test.beforeAll(async ({ browser }) => {
+
         page = await browser.newPage()
-        await page.goto('http://localhost:3000/')
+        await page.goto(pages.home)
         await page.waitForTimeout(500)
         themeSwitcher = page.getByTestId('theme-switcher')
         burgerIcon = page.getByTestId('popupmenu-burger-button')
@@ -26,25 +28,43 @@ test.describe('Работа кнопки открытия и закрытия м
         await expect(htmlTag).toBeVisible()
     })
 
+
     test("При загрузке страницы стоит тема в значении DARK", async () => {
         const theme = await htmlTag.getAttribute('data-theme')
         expect(theme).toBe(Theme.dark)
+        
+        await expect(page).toHaveScreenshot('dark_theme.png')
     })
+   
 
-    test("Клик по ThemeSwitcher переключает тему на LIGHT, потом - обратно", async () => {
+
+    test("Клик по ThemeSwitcher переключает тему на LIGHT", async () => {
         await burgerIcon.click()
         await page.waitForTimeout(200)
-        
+
         await themeSwitcher.click()
         const theme = await htmlTag.getAttribute('data-theme')
         expect(theme).toBe(Theme.light)
-        
+
+        await expect(page).toHaveScreenshot('light_theme.png')
+    })
+    
+
+
+    
+
+    test("Клик по ThemeSwitcher второй раз вернет тему обратно на DARK", async () => {
+        await burgerIcon.click()
+        await page.waitForTimeout(200)
+
+        await themeSwitcher.click()
         await themeSwitcher.click()
         const theme2 = await htmlTag.getAttribute('data-theme')
         expect(theme2).toBe(Theme.dark)
     })
 
-
 })
+
+
 
 
