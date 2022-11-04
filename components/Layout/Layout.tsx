@@ -3,12 +3,18 @@ import Head from "next/head"
 
 import Footer from "./Footer"
 import Header from "./Header"
+import { Theme } from "../../typings/ui"
 
 interface LayoutProps {
     children: React.ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {
+
+    React.useEffect(() => {
+        document.documentElement.setAttribute("data-theme", Theme.dark)
+    },[])
+    
 
     return (
         <>

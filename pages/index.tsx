@@ -3,7 +3,7 @@ import ContactInfo from '../components/PageMain/ContactInfo'
 import GeneralInfo from '../components/PageMain/GeneralInfo'
 
 import PortfolioImage from '../components/PageMain/PortfoliImage'
-import WorkList from '../components/PageMain/WorkList'
+import WorkList from './../components/PageMain/WorkList'
 
 import styles from './../components/PageMain/css/styles.module.css'
 

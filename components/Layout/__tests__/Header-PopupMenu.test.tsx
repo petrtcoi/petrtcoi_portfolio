@@ -30,11 +30,6 @@ describe('Header', () => {
             expect(screen.getByTestId('popupmenu-burger-button')).toBeVisible()
         })
 
-        test('TEST', () => {
-            render(<Header />)
-            const popupMenu = screen.getByTestId('popup-menu')
-            console.log(popupMenu.dataset.popupmenuStatus)
-        })
 
         test('Popup меню скрыто и имеет статус закрыто', () => {
             render(<Header />)
@@ -64,6 +59,17 @@ describe('Header', () => {
             await userEvent.click(screen.getByTestId('popupmenu-burger-button'))
             await userEvent.click(screen.getByTestId('popupmenu-close-button'))
             expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.closed)
+        })
+
+
+        test('Snapshot test - начальное состояние', () => {
+            const { asFragment } = render(<Header />)
+            expect(asFragment()).toMatchSnapshot()
+        })
+        test('Snapshot test - после клика по бургеру', () => {
+            const { asFragment } = render(<Header />)
+            screen.getByTestId('popupmenu-burger-button')
+            expect(asFragment()).toMatchSnapshot()
         })
 
 

@@ -22,10 +22,10 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (_props) => {
             <div>
                 cветлая
             </div>
-            <div>
+            <div data-testid={ "theme-switcher" }>
                 <MaterialUISwitch
                     defaultChecked={ true }
-                    onChange={toggleTheme}
+                    onChange={ toggleTheme }
                 />
             </div>
 
