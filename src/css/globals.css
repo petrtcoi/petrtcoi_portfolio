@@ -88,13 +88,13 @@ p {
   font-weight: 300;
 }
 .text--small {
-  font-size: var(--small-text);;
+  font-size: var(--small-text);
 }
 .text--bold {
   font-weight: 500;
 }
 .accent {
-  color: var(--color-accent)
+  color: var(--color-accent);
 }
 
 /* ********************* */
