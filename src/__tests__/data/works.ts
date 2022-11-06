@@ -2,6 +2,7 @@ import { Work } from "../../types/work.type"
 
 export const works: Work[] = [
     {
+        publishDate: '22 ноября 2021',
         title: 'Запуск сайта',
         description: 'Создание шаблона сайта с минимальным функционалом. Адаптивная верстка flexbox. Также используем CSS-переменные, в том числе и для эффективной смены темы сайта.',
         tags: ['NextJS', 'Flexbox', 'CSS variables'],
@@ -12,6 +13,7 @@ export const works: Work[] = [
         }
     },
     {
+        publishDate: '22 ноября 2021',
         title: 'Work 2',
         description: 'Work 3',
         tags: ['tag1', 'tag3'],
@@ -22,6 +24,7 @@ export const works: Work[] = [
         }
     },
     {
+        publishDate: '22 ноября 2021',
         title: 'Work 3',
         description: 'Work 3',
         tags: ['tag3'],

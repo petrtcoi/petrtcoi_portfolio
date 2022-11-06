@@ -13,20 +13,20 @@ describe('Toggle PopupMenu', () => {
 
     test('Popup меню скрыто и имеет статус закрыто', () => {
         render(<Navbar />)
-        const popupMenu = screen.getByTestId('popup-menu')
+        const popupMenu = screen.getByRole('navigation', {name: /popup меню/i})
         expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.closed)
     })
 
     test('Клик по бургеру меняет статус меню на открыто', async () => {
         render(<Navbar />)
-        const popupMenu = screen.getByTestId('popup-menu')
-        await userEvent.click(screen.getByTestId('popupmenu-burger-button'))
+        const popupMenu = screen.getByRole('navigation', {name: /popup меню/i})
+        await userEvent.click(screen.getByRole('button', { name: /открыть меню/i }))
         expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.open)
     })
 
     test('Клик по бургеру делает ставит на него свойстро "скрыть"', async () => {
         render(<Navbar />)
-        const burgerButton = screen.getByTestId('popupmenu-burger-button')
+        const burgerButton = screen.getByRole('button', { name: /открыть меню/i })
         await userEvent.click(burgerButton)
         expect(burgerButton.dataset.shouldHide).toBe("true")
     })
@@ -34,10 +34,10 @@ describe('Toggle PopupMenu', () => {
 
     test('Клик по ClosedIcon меняет статус на закрыто', async () => {
         render(<Navbar />)
-        const popupMenu = screen.getByTestId('popup-menu')
+        const popupMenu = screen.getByRole('navigation', {name: /popup меню/i})
 
-        await userEvent.click(screen.getByTestId('popupmenu-burger-button'))
-        await userEvent.click(screen.getByTestId('popupmenu-close-button'))
+        await userEvent.click(screen.getByRole('button', { name: /открыть меню/i }))
+        await userEvent.click(screen.getByRole('button', { name: /закрыть меню/i }))
         expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.closed)
     })
 
@@ -48,7 +48,7 @@ describe('Toggle PopupMenu', () => {
     })
     test('Snapshot test - после клика по бургеру', () => {
         const { asFragment } = render(<Navbar />)
-        screen.getByTestId('popupmenu-burger-button')
+        screen.getByRole('button', { name: /открыть меню/i })
         expect(asFragment()).toMatchSnapshot()
     })
 

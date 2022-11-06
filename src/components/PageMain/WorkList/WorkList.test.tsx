@@ -8,21 +8,20 @@ describe('WorkList Section', () => {
     describe("WORKLIST", () => {
         test('Выводится', async () => {
             render(<WorkList works={ [] } />)
-            expect(screen.getByTestId('worklist')).toBeVisible()
+            expect(screen.getByRole('list', {name: /список работ/i})).toBeVisible()
         })
         test('Выводит заголовок <h2> "Список работ"', async () => {
             render(<WorkList works={ [] } />)
-            expect(screen.getByTestId("worklist_title")).toHaveTextContent("Список работ")
+            expect(screen.getByRole('heading', {level: 2, name: /список работ/i})).toBeVisible()
         })
         test('display correct qnty of works', async () => {
             render(<WorkList works={ works } />)
-            expect(screen.getAllByTestId('single_work').length).toBe(works.length)
+            expect(screen.getAllByRole('listitem', {name: /работа/i}).length).toBe(works.length)
         })
         test('Display all work titles', async () => {
             render(<WorkList works={ works } />)
-            const workTitles = screen.getAllByTestId("single_work_title")
             for (const work of works) {
-                expect(work.title in workTitles)
+                expect(screen.getByRole('heading', {name: work.title})).toBeVisible()
             }
         })
     })

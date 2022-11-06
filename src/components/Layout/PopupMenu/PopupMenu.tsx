@@ -14,16 +14,17 @@ type PopupMenuProps = {
 const PopupMenu: React.FC<PopupMenuProps> = (props) => {
 
     return (
-        <div
-            data-testid="popup-menu"
+        <nav
             data-popupmenu-status={ props.menuStatus }
+            aria-label="Popup меню"
             className={ styles.popupmenu }
             style={ { zIndex: 1000 } }
         >
             {/* ШАПКА МЕНЮ */ }
             <div className={ styles.header }>
                 <div
-                    data-testid="popupmenu-close-button"
+                    aria-label="Закрыть меню"
+                    role="button" 
                     className={ styles.header__closebutton }
                     onClick={ props.closeMenuFunc }
                 >
@@ -40,7 +41,7 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
                 <ThemeSwitcher />
             </div>
 
-        </div>
+        </nav>
     )
 
 

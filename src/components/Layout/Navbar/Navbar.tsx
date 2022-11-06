@@ -22,24 +22,21 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
         <header data-testid="header">
 
             {/* LOGO */ }
-            <div data-testid="react-logo">
-                <Link href="/">
-                    <ReactLogo size={ 60 } className={ "logo" } />
-                </Link>
-            </div>
+            <Link href="/">
+                <ReactLogo size={ 60 } className={ "logo" } />
+            </Link>
 
 
             {/* TITLE */ }
-            <div
-                data-testid="header-title"
-                className={ styles.title } >
+            <h1 className={ styles.title } >
                 Petr Tcoi
-            </div>
+            </h1>
 
 
             {/* BURGER MENU */ }
             <div
-                data-testid="popupmenu-burger-button"
+                aria-label="Открыть меню"
+                role="button"
                 data-should-hide={ menuStatus === MenuStatus.open ? "true" : "" }
                 onClick={ () => setMenuStatus(MenuStatus.open) }
             >

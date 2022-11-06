@@ -6,6 +6,7 @@ export enum WorkLink {
 
 export type Work = {
     title: string
+    publishDate: string
     description: string
     tags: string[]
     links: {[key in WorkLink]?: string}

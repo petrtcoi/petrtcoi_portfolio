@@ -15,9 +15,9 @@ test.describe('Работа кнопки открытия и закрытия м
         page = await browser.newPage()
         await page.goto(pages.home)
 
-        burgerIcon = page.getByTestId('popupmenu-burger-button')
-        popupMenu = page.getByTestId('popup-menu')
-        closeMenuIcon = page.getByTestId('popupmenu-close-button')
+        burgerIcon = page.getByRole('button', { name: /открыть меню/i })
+        popupMenu = page.getByRole('navigation', {name: /popup меню/i})
+        closeMenuIcon = page.getByRole('button', { name: /закрыть меню/i })
 
         const screen = page.viewportSize()
         if (screen === null) throw new Error('screen is null')

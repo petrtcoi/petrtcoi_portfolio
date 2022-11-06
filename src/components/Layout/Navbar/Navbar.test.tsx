@@ -4,19 +4,20 @@ import Navbar from './Navbar'
 
 describe('Navbar', () => {
 
-    test('Выводится логотип React', () => {
+    test('Выводится ссылка на главную странциу', () => {
         render(<Navbar />)
-        expect(screen.getByTestId('react-logo')).toBeVisible()
+        expect(screen.getByRole('link', { name: /логотип react/i })).toBeVisible()
+        expect(screen.getByRole('link', { name: /логотип react/i })).toHaveAttribute('href', '/')
     })
 
     test('Выводится Заголовок в шапке', () => {
         render(<Navbar />)
-        expect(screen.getByTestId('header-title')).toBeVisible()
+        expect(screen.getByRole('heading', { name: 'Petr Tcoi', level: 1 })).toBeVisible()
     })
 
     test('Есть бургер, кнопка для открытия меню', () => {
         render(<Navbar />)
-        expect(screen.getByTestId('popupmenu-burger-button')).toBeVisible()
+        expect(screen.getByRole('button', { name: /открыть меню/i })).toBeVisible()
     })
 
 })

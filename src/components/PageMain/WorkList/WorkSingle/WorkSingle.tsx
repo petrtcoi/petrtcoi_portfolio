@@ -12,31 +12,41 @@ type WorkSingleProps = {
 
 const WorkSingle: React.FC<WorkSingleProps> = (props) => {
     return (
-        <div className={ styles.work } data-testid="single_work">
-            <div data-testid="single_work_title" className={ styles.work__title }>
-                <h3> { props.work.title }</h3>
+        <div
+            aria-label="Работа"
+            role="listitem"
+            className={ styles.work }
+        >
+            <div style={ { display: "flex", flexDirection: "row", alignItems: "baseline", justifyContent: "space-between" } }>
+                <h3 className={ styles.work__title }>
+                    { props.work.title }
+                </h3>
+                <p aria-label="Дата публицации" className="no-margin comment--small">
+                    { props.work.publishDate }
+                </p>
             </div>
-            <div
-                data-testid="single_work_description"
-                className={ "text--small" }
-            >
+
+
+            <p aria-label="Описание работы" className={ "text--small no-margin" } >
                 { props.work.description }
-            </div>
-            <div
-                data-testid="single_work_tags"
-                className={ "text--small accent" }
-            >
+            </p>
+
+            <p aria-label="Используемые технологии" className={ "text--small no-margin accent" } >
                 { props.work.tags.join(', ') }
-            </div>
+            </p>
+
             <div
-                data-testid="single_work_links"
+                role="list"
+                aria-label="Ссылки на публикации работы"
                 className={ styles.work__sources }
             >
-                <div className="text--bold text--small">
+
+                <p className="text--bold text--small no-margin">
                     Подробное описание работы:
-                </div>
+                </p>
+
                 { props.work.links.devto &&
-                    <div className={ styles.work__source }>
+                    <div className={ styles.work__source } role="listitem">
                         <Link
                             href={ props.work.links.devto }
                             target={ "_blank" }
@@ -47,8 +57,9 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
                         </Link>
                     </div>
                 }
+
                 { props.work.links.vcru &&
-                    <div className={ styles.work__source }>
+                    <div className={ styles.work__source } role="listitem">
                         <Link
                             href={ props.work.links.vcru }
                             target={ "_blank" }
@@ -59,8 +70,9 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
                         </Link>
                     </div>
                 }
+
                 { props.work.links.local &&
-                    <div className={ styles.work__source }>
+                    <div className={ styles.work__source } role="listitem">
                         <Link
                             href={ props.work.links.local }
                             target={ "_blank" }

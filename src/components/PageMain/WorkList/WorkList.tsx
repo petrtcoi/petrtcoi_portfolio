@@ -14,8 +14,8 @@ type WorkListProps = {
 
 const WorkList: React.FC<WorkListProps> = (props) => {
     return (
-        <div className={ styles.block } data-testid="worklist">
-            <h2 style={ { textAlign: "center" } } data-testid="worklist_title">Список работ</h2>
+        <div className={ styles.block } role="list" aria-label="Список работ">
+            <h2 style={ { textAlign: "center" } }>Список работ</h2>
             <div className={ styles.worklist }>
                 {
                     props.works.map((work, index) => {

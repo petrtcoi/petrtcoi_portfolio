@@ -22,17 +22,17 @@ describe('Work Single', () => {
 
     test('Загружается заголовок работы', async () => {
         render(<WorkSingle work={ workOne } />)
-        expect(screen.getByTestId("single_work_title")).toHaveTextContent(workOne.title)
+        expect(screen.getByRole("heading", {name: workOne.title})).toBeVisible()
     })
 
     test('Выводится описание работы', async () => {
         render(<WorkSingle work={ workOne } />)
-        expect(screen.getByTestId("single_work_description")).toHaveTextContent(workOne.description)
+        expect(screen.getByLabelText(/описание работы/i)).toHaveTextContent(workOne.description)
     })
 
     test('Теги работы выводятся через запятую', async () => {
         render(<WorkSingle work={ workOne } />)
-        expect(screen.getByTestId("single_work_tags")).toHaveTextContent(workOne.tags.join(', '))
+        expect(screen.getByLabelText(/используемые технологии/i)).toHaveTextContent(workOne.tags.join(', '))
     })
 
     test('Выводит все ссылки на страницы', () => {
