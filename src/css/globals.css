@@ -80,7 +80,7 @@ p {
 
 .comment--small {
   font-weight: 300;
-  font-size: 0.75rem;
+  font-size: var(--small-text);
 }
 .text--large {
   font-size: 1.3rem;

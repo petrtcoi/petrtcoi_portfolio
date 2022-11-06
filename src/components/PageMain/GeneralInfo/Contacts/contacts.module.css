@@ -25,6 +25,6 @@
   width: 40px;
 }
 .row__data {
-  font-size: 0.8rem;
+  font-size: var(--small-text);
   padding: 0;
 }
