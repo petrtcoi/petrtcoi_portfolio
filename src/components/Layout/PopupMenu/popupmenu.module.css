@@ -14,6 +14,7 @@
 .popupmenu[data-popupmenu-status="open"] {
   margin-right: 0px;
   transition: margin 0.2s;
+  transition: background-color var(--change-theme-duration);
 }
 
 .header {
