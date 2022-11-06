@@ -1,0 +1,30 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 30px;
+}
+.portfolioimage {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  align-self: center;
+  margin-bottom: 30px;
+  border-radius: "50%";
+}
+
+.row {
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 200px;
+  align-items: center;
+}
+.row__icon {
+  width: 40px;
+}
+.row__data {
+  font-size: 0.8rem;
+  padding: 0;
+}

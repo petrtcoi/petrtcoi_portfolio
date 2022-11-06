@@ -1,0 +1,35 @@
+.popupmenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: -350px;
+
+  width: 300px;
+  height: 100%;
+  border-left: 1px solid var(--color-grey);
+
+  background-color: var(--background);
+  transition: margin 0.2s;
+}
+.popupmenu[data-popupmenu-status="open"] {
+  margin-right: 0px;
+  transition: margin 0.2s;
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dotted var(--color-grey);
+}
+.content {
+  padding: 20px 10px;
+}
+
+.header__title {
+  display: "inline-block";
+}
+.header__closebutton {
+  display: "inline-block";
+}

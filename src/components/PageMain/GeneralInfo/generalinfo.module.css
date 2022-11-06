@@ -1,0 +1,20 @@
+.block {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.block__contacts {
+  flex-shrink: 2;
+  min-width: 300px;
+}
+.block__about {
+  flex-shrink: 1;
+  padding-left: 30px;
+}
+@media (max-width: 800px) {
+  .block {
+    flex-flow: column;
+  }
+  .general-info {
+    padding-left: 0px;
+  }
+}

@@ -1,0 +1,10 @@
+:root {
+  --color-text-main: #bab7b7;
+  --background: black;
+  --change-theme-duration: 0.5s;
+}
+
+[data-theme="light"] {
+  --color-text-main: black;
+  --background: white;
+}

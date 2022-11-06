@@ -1,0 +1,142 @@
+html,
+body {
+  margin: 0 auto;
+  max-width: var(--body-max-width);
+
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+
+  color: var(--color-text-main);
+  background-color: var(--background);
+  transition: background-color var(--change-theme-duration);
+}
+
+/* ********************* */
+/* LAYOUT */
+/* ********************* */
+
+main {
+  flex-grow: 1;
+  padding: var(--padding-main-desktop);
+}
+header {
+  padding: var(--padding-header-desktop);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer {
+  padding: var(--padding-footer-mobile);
+  margin: 60px 0px 50px 0px;
+  border-top: 1px solid var(--color-grey);
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  main {
+    padding: var(--padding-main-mobile);
+  }
+  header {
+    padding: var(--padding-header-mobile);
+  }
+  footer {
+    padding: var(--padding-footer-mobile);
+  }
+}
+
+/* ********************* */
+/* ТИПОГРАФИЯ */
+/* ********************* */
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-family: Raleway, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+p {
+  margin: 1.2em 0;
+}
+
+
+.comment--small {
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+.text--large {
+  font-size: 1.3rem;
+  line-height: 1.4em;
+  font-weight: 300;
+}
+.text--small {
+  font-size: 0.8rem;
+}
+.text--bold {
+  font-weight: 500;
+}
+.accent {
+  color: var(--color-accent)
+}
+
+/* ********************* */
+/* ССЫЛКИ */
+/* ********************* */
+
+a {
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-accent);
+}
+.link--accent {
+  color: var(--color-accent);
+}
+.link--accent:hover {
+  text-decoration: underline;
+}
+
+/* ********************* */
+/* ДРУГОЕ */
+/* ********************* */
+
+.icon-button {
+  cursor: pointer;
+  fill: var(--color-text-main);
+}
+.icon-button:hover {
+  fill: var(--color-accent);
+}
+[data-should-hide="true"] {
+  opacity: 0;
+  transition: opacity var(--hide-duration);
+}
+
+.logo {
+  fill: var(--color-accent);
+}
+
+.svg-icon-text {
+  fill: var(--color-text-main);
+  display: flex;
+  justify-content: center;
+}

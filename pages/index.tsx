@@ -1,11 +1,9 @@
 import type { NextPage } from 'next'
-import ContactInfo from '../components/PageMain/ContactInfo'
-import GeneralInfo from '../components/PageMain/GeneralInfo'
+import GeneralInfo from '../src/components/PageMain/GeneralInfo/GeneralInfo'
+import WorkList from '../src/components/PageMain/WorkList/WorkList'
+import { works } from '../src/dataset/works'
 
-import PortfolioImage from '../components/PageMain/PortfoliImage'
-import WorkList from './../components/PageMain/WorkList'
 
-import styles from './../components/PageMain/css/styles.module.css'
 
 type PageMainProps = {}
 
@@ -14,14 +12,8 @@ const PageMain: NextPage<PageMainProps> = (_props) => {
 
     return (
         <div data-testid="page-home" >
-            <div style={ { display: "flex", flexWrap: "wrap" } }>
-                <div className={ styles["image-contacts-block"] }>
-                    <PortfolioImage />
-                    <ContactInfo />
-                </div>
-                <GeneralInfo />
-            </div>
-            <WorkList />
+            <GeneralInfo />
+            <WorkList works={ works } />
         </div>
     )
 }

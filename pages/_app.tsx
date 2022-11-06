@@ -1,9 +1,10 @@
 import type { AppProps } from 'next/app'
-import Layout from '../components/Layout/Layout'
+import Layout from '../src/components/Layout/Layout'
 
-import '../styles/variables.css'
-import '../styles/fonts.css'
-import '../styles/globals.css'
+import '../src/css/variables.css'
+import '../src/css/fonts-faces.css'
+import '../src/css/globals.css'
+import '../src/theme/theme.css'
 
 
 export default function App({ Component, pageProps }: AppProps) {
