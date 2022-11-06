@@ -30,45 +30,45 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
             </div>
             <div
                 data-testid="single_work_links"
-                className={ styles.work__links }
+                className={ styles.work__sources }
             >
-                <span className="text--bold">Подробное описание работы:</span>
-                <ul>
-                    { props.work.links.devto &&
-                        <li>
-                            <Link
-                                href={ props.work.links.devto }
-                                target={ "_blank" }
-                                rel="noreferrer"
-                                className={styles.work__links__el}
-                            >
-                                { WorkLinkLabels.devto }
-                            </Link>
-                        </li>
-                    }
-                    { props.work.links.vcru &&
-                        <li>
-                            <Link
-                                href={ props.work.links.vcru }
-                                target={ "_blank" }
-                                rel="noreferrer"
-                                className={styles.work__links__el}
-                            >
-                                { WorkLinkLabels.vcru }
-                            </Link>
-                        </li>
-                    }
-                    { props.work.links.local &&
-                        <li>
-                            <Link
-                                href={ props.work.links.local }
-                                target={ "_blank" }
-                            >
-                              <span  className={styles.work__links__el}> { WorkLinkLabels.local }</span> 
-                            </Link>
-                        </li>
-                    }
-                </ul>
+                <div className="text--bold text--small">
+                    Подробное описание работы:
+                </div>
+                { props.work.links.devto &&
+                    <div className={ styles.work__source }>
+                        <Link
+                            href={ props.work.links.devto }
+                            target={ "_blank" }
+                            rel="noreferrer"
+                            className={ styles.work__links__el }
+                        >
+                            { WorkLinkLabels.devto }
+                        </Link>
+                    </div>
+                }
+                { props.work.links.vcru &&
+                    <div className={ styles.work__source }>
+                        <Link
+                            href={ props.work.links.vcru }
+                            target={ "_blank" }
+                            rel="noreferrer"
+                            className={ styles.work__links__el }
+                        >
+                            { WorkLinkLabels.vcru }
+                        </Link>
+                    </div>
+                }
+                { props.work.links.local &&
+                    <div className={ styles.work__source }>
+                        <Link
+                            href={ props.work.links.local }
+                            target={ "_blank" }
+                        >
+                            <span className={ styles.work__links__el }> { WorkLinkLabels.local }</span>
+                        </Link>
+                    </div>
+                }
             </div>
         </div>
     )

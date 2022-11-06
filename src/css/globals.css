@@ -88,7 +88,7 @@ p {
   font-weight: 300;
 }
 .text--small {
-  font-size: 0.8rem;
+  font-size: var(--small-text);;
 }
 .text--bold {
   font-weight: 500;
