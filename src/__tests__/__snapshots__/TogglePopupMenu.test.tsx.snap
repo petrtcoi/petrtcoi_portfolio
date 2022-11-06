@@ -73,6 +73,7 @@ exports[`Toggle PopupMenu Snapshot test - начальное состояние 
       class="popupmenu"
       data-popupmenu-status="closed"
       data-testid="popup-menu"
+      style="z-index: 1000;"
     >
       <div
         class="header"
@@ -229,6 +230,7 @@ exports[`Toggle PopupMenu Snapshot test - после клика по бурге�
       class="popupmenu"
       data-popupmenu-status="closed"
       data-testid="popup-menu"
+      style="z-index: 1000;"
     >
       <div
         class="header"

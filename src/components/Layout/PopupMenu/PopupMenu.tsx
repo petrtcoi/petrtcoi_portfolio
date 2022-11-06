@@ -18,6 +18,7 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
             data-testid="popup-menu"
             data-popupmenu-status={ props.menuStatus }
             className={ styles.popupmenu }
+            style={ { zIndex: 1000 } }
         >
             {/* ШАПКА МЕНЮ */ }
             <div className={ styles.header }>
