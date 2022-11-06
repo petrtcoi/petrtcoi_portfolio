@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
 
 
     return (
-        <header data-testid="header">
+        <header>
 
             {/* LOGO */ }
             <Link href="/">
