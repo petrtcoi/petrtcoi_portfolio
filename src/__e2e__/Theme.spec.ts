@@ -12,7 +12,6 @@ test.describe('Theme swicthing', () => {
     let htmlTag: Locator
 
     test.beforeAll(async ({ browser }) => {
-
         page = await browser.newPage()
         await page.goto(pages.home)
         await page.waitForTimeout(500)
@@ -41,7 +40,6 @@ test.describe('Theme swicthing', () => {
     test("Клик по ThemeSwitcher переключает тему на LIGHT", async () => {
         await burgerIcon.click()
         await page.waitForTimeout(200)
-
         await themeSwitcher.click()
         const theme = await htmlTag.getAttribute('data-theme')
         expect(theme).toBe(Theme.light)
@@ -51,19 +49,14 @@ test.describe('Theme swicthing', () => {
 
 
 
-
-
     test("Клик по ThemeSwitcher второй раз вернет тему обратно на DARK", async () => {
         await burgerIcon.click()
         await page.waitForTimeout(200)
 
         await themeSwitcher.click()
         await themeSwitcher.click()
-        const theme2 = await htmlTag.getAttribute('data-theme')
-        expect(theme2).toBe(Theme.dark)
-
-        // const buffer = await burgerIcon.screenshot()
-
+        const theme = await htmlTag.getAttribute('data-theme')
+        expect(theme).toBe(Theme.dark)
     })
 
 })

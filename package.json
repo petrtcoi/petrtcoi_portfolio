@@ -16,7 +16,10 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.12",
+    "guid-typescript": "^1.0.9",
+    "i": "^0.3.7",
     "next": "13.0.0",
+    "npm": "^8.19.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
