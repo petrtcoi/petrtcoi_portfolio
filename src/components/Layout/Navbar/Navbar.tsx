@@ -15,43 +15,43 @@ type NavbarProps = {}
 
 const Navbar: React.FC<NavbarProps> = (_props) => {
 
-    const [menuStatus, setMenuStatus] = React.useState<MenuStatus>(MenuStatus.closed)
+  const [menuStatus, setMenuStatus] = React.useState<MenuStatus>(MenuStatus.closed)
 
 
-    return (
-        <header>
+  return (
+    <header>
 
-            {/* LOGO */ }
-            <Link href="/">
-                <ReactLogo size={ 60 } className={ "logo" } />
-            </Link>
-
-
-            {/* TITLE */ }
-            <h1 className={ styles.title } >
-                Petr Tcoi
-            </h1>
+      {/* LOGO */ }
+      <Link href="/">
+        <ReactLogo size={ 60 } className={ "logo" } />
+      </Link>
 
 
-            {/* BURGER MENU */ }
-            <div
-                aria-label="Открыть меню"
-                role="button"
-                data-should-hide={ menuStatus === MenuStatus.open ? "true" : "" }
-                onClick={ () => setMenuStatus(MenuStatus.open) }
-            >
-                <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
-            </div>
+      {/* TITLE */ }
+      <h1 className={ styles.title } >
+        Petr Tcoi
+      </h1>
 
 
-            {/* POPUPMENU */ }
-            <PopupMenu
-                menuStatus={ menuStatus }
-                closeMenuFunc={ () => setMenuStatus(MenuStatus.closed) }
-            />
+      {/* BURGER MENU */ }
+      <div
+        aria-label="Открыть меню"
+        role="button"
+        data-should-hide={ menuStatus === MenuStatus.open ? "true" : "false" }
+        onClick={ () => setMenuStatus(MenuStatus.open) }
+      >
+        <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
+      </div>
 
-        </header>
-    )
+
+      {/* POPUPMENU */ }
+      <PopupMenu
+        menuStatus={ menuStatus }
+        closeMenuFunc={ () => setMenuStatus(MenuStatus.closed) }
+      />
+
+    </header>
+  )
 
 }
 
