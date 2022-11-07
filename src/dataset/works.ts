@@ -3,12 +3,12 @@ import { Work } from "../types/work.type"
 export const works: Work[] = [
     {
         publishDate: '07.11.2022',
-        title: 'Запуск сайта',
-        description: 'Самый первый запуск проекта. Была создана эта страница, а также верхнее меню. Возможности собственно React здесь использованы по-минимуму. В основном все решено за счет CSS. Смена темы со светлой на темную реализована через переменные CSS: мне этот вариант показался эффективным, так как не требует перерисовки компонентов. Хотя вынос логики в CSS немного путает общую структуру. В последующем сглажу подобные углы при подключении Redux.',
-        tags: ['NextJS', 'Flexbox', 'CSS variables'],
+        title: 'Смена темы через CSS-переменные',
+        description: 'Демонстрация смены темы через CSS-переменные и манипулирование DOM: устанвока атрибута data-theme для тега <html>. Также, через свойство transition добавлена плавность при смене цветовой схемы сайта.',
+        tags: ['React','CSS variables'],
         links: {
-            devto: 'http://example-1.com',
-            // vcru: 'https://example-1.com',
+            devto: 'https://dev.to/petrtcoi/smiena-tiemy-saita-chieriez-css-pieriemiennyie-4f7',
+            vcru: 'https://vc.ru/u/206685-petr-tcoi/534102-smena-temy-sayta-cherez-css-peremennye',
             // local: 'page_1'
         }
     },
