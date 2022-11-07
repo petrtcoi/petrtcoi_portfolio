@@ -46,6 +46,7 @@ describe('Toggle PopupMenu', () => {
         const { asFragment } = render(<Navbar />)
         expect(asFragment()).toMatchSnapshot()
     })
+
     test('Snapshot test - после клика по бургеру', () => {
         const { asFragment } = render(<Navbar />)
         screen.getByRole('button', { name: /открыть меню/i })

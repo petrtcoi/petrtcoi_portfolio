@@ -2,9 +2,7 @@
 
 exports[`Toggle PopupMenu Snapshot test - начальное состояние 1`] = `
 <DocumentFragment>
-  <header
-    data-testid="header"
-  >
+  <header>
     <a
       href="/"
     >
@@ -155,9 +153,7 @@ exports[`Toggle PopupMenu Snapshot test - начальное состояние 
 
 exports[`Toggle PopupMenu Snapshot test - после клика по бургеру 1`] = `
 <DocumentFragment>
-  <header
-    data-testid="header"
-  >
+  <header>
     <a
       href="/"
     >

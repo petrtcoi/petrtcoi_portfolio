@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
+    "coverage": "npx jest --watchAll=false --coverage",
     "e2e": "npx playwright test",
     "e2e-update": "npx playwright test --update-snapshots"
   },

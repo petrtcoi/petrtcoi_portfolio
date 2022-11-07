@@ -15,7 +15,12 @@ const customJestConfig = {
   setupFilesAfterEnv: ['./setupTests.js'],
   testMatch: [
     "**/*.test.*"
+  ],
+  testPathIgnorePatterns: ["__snapshots__"],
+  collectCoverageFrom: [
+    "<rootDir>/src/**/*.tsx"
   ]
+
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
