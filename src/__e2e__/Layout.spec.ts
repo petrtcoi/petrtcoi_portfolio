@@ -16,7 +16,7 @@ test.describe('Работа кнопки открытия и закрытия м
         await page.goto(pages.home)
 
         burgerIcon = page.getByRole('button', { name: /открыть меню/i })
-        popupMenu = page.getByRole('navigation', {name: /popup меню/i})
+        popupMenu = page.getByRole('navigation', { name: /popup меню/i })
         closeMenuIcon = page.getByRole('button', { name: /закрыть меню/i })
 
         const screen = page.viewportSize()
@@ -38,14 +38,18 @@ test.describe('Работа кнопки открытия и закрытия м
 
     test("Меню открывается после клика по Burger", async () => {
         await burgerIcon.click()
-        await page.waitForTimeout(200)    
-        let menuBoundary = await popupMenu.boundingBox()
+        await page.waitForTimeout(200)
+        const menuBoundary = await popupMenu.boundingBox()
         if (menuBoundary === null) throw new Error('menuBoundary is null')
         expect(menuBoundary.x).toBeLessThan(screenWidth)
 
+    })
+    test("Меню закрывается после клика по ClodeButton", async () => {
+        await burgerIcon.click()
+        await page.waitForTimeout(200)
         await closeMenuIcon.click()
         await page.waitForTimeout(200)
-        menuBoundary = await popupMenu.boundingBox()
+        const menuBoundary = await popupMenu.boundingBox()
         if (menuBoundary === null) throw new Error('menuBoundary is null')
         expect(menuBoundary.x).toBeGreaterThan(screenWidth)
     })
