@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+  font-size: var(--text-small);
+}
+
+tbody {
+  border: 1px solid var(--color-grey)
+}
+th {
+  text-align: center;
+}
+
+.td__left {
+  text-align: left;
+}

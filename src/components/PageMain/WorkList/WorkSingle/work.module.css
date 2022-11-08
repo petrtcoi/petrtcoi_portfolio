@@ -30,7 +30,7 @@
   display: inline-block;
   margin: 0px;
   padding: 10px;
-  /* font-size: var(--small-text); */
+  /* font-size: var(--text-small); */
   border: 1px solid var(--background);
   border-radius: 20px;
 }
