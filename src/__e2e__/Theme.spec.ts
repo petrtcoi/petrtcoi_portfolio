@@ -14,7 +14,7 @@ test.describe('Theme swicthing', () => {
     test.beforeAll(async ({ browser }) => {
         page = await browser.newPage()
         await page.goto(pages.home)
-        await page.waitForTimeout(500)
+        await page.waitForTimeout(1000)
         themeSwitcher = page.getByRole('switch', {name: /переключение темы/i})
         burgerIcon = page.getByRole('button', { name: /открыть меню/i })
         htmlTag = page.locator('html')

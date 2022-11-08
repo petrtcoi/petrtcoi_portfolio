@@ -1,6 +1,7 @@
 import React from 'react'
+import { Theme } from '../../../../theme/theme.enum'
 
-export type ClientTableHeaderProps = {}
+export type ClientTableHeaderProps =  {}
 
 const ClientTableHeader: React.FC<ClientTableHeaderProps> = (_props) => {
 

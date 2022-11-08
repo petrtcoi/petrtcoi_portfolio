@@ -2,9 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import EmailIcon from '../../../../assets/svg-icons/EmailIcon'
-import LinkedinIcon from '../../../../assets/svg-icons/LinkedinIcon'
-import TelegramIcon from '../../../../assets/svg-icons/TelegramIcon'
+import EmailIcon from '../../../../shared/svg-icons/EmailIcon'
+import LinkedinIcon from '../../../../shared/svg-icons/LinkedinIcon'
+import TelegramIcon from '../../../../shared/svg-icons/TelegramIcon'
 
 import styles from './contacts.module.css'
 

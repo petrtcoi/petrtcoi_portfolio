@@ -1,9 +1,9 @@
 import React from "react"
 import Link from "next/link"
 
-import BurgerMenuIcon from "../../../assets/svg-icons/BurgerMenuIcon"
+import BurgerMenuIcon from "../../../shared/svg-icons/BurgerMenuIcon"
 import PopupMenu from "../PopupMenu/PopupMenu"
-import ReactLogo from "../../../assets/svg-icons/ReactLogo"
+import ReactLogo from "../../../shared/svg-icons/ReactLogo"
 
 import { MenuStatus } from "../../../types/ui.type"
 

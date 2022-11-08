@@ -4,6 +4,7 @@ import '../src/css/globals.css'
 import '../src/css/tables.css'
 
 import '../src/theme/theme.css'
+import { ThemeDecorator } from './decorators/ThemeDecorator'
 
 
 export const parameters = {
@@ -18,3 +19,5 @@ export const parameters = {
   //   viewports: INITIAL_VIEWPORTS,
   // },
 }
+
+export const decorators = [ThemeDecorator]

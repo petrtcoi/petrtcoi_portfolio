@@ -1,7 +1,7 @@
 import React from 'react'
 
-import CancelIcon from '../../../assets/svg-icons/CancelIcon'
-import ThemeSwitcher from '../../../assets/ui-components/ThemeSwitcher/ThemeSwitcher'
+import CancelIcon from '../../../shared/svg-icons/CancelIcon'
+import ThemeSwitcher from '../../../shared/ui-components/ThemeSwitcher/ThemeSwitcher'
 import { MenuStatus } from '../../../types/ui.type'
 
 import styles from './popupmenu.module.css'

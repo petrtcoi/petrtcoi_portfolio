@@ -9,7 +9,7 @@ type ClientsTableProps = {
 const ClientsTable: React.FC<ClientsTableProps> = (props) => {
   return (
     <table>
-      <ClientTableHeader />
+      <ClientTableHeader/>
       <tbody>
 
       </tbody>
