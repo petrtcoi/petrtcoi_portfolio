@@ -1,7 +1,7 @@
-import { ComponentMeta, Story } from '@storybook/react'
 import React from 'react'
+import { Story } from '@storybook/react'
 
-import ClientTableHeader, { ClientTableHeaderProps } from './CleintTableHeader'
+import ClientTableHeader from './CleintTableHeader'
 
 import UiThemeControl from '../../../../shared/helpers/storybookUiThemeControl'
 import { Theme } from '../../../../theme/theme.enum'
@@ -19,12 +19,12 @@ const storyDefault = {
     viewport: { defaultViewport: "desktop" }
   }
 
-} as ComponentMeta<typeof ClientTableHeader>
+} 
 export default storyDefault
 
 
 
-const Template: Story<ClientTableHeaderProps> = (args) => {
+const Template: Story = (args) => {
   return (
     <table>
       <ClientTableHeader { ...args } />

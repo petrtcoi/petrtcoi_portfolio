@@ -7,6 +7,3 @@ test('should render TableHeader в DarkMode Desktop', () => {
   expect(screen.getByTestId('table-clients__header')).toBeVisible()
 })
 
-test('Snapshot TableHeader в DarkMode Desktop', () => {
-  expect(screen.getByRole('table')).toMatchSnapshot()
-})

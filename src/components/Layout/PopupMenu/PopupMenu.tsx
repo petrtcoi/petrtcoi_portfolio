@@ -24,7 +24,7 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
             <div className={ styles.header }>
                 <div
                     aria-label="Закрыть меню"
-                    role="button" 
+                    role="button"
                     className={ styles.header__closebutton }
                     onClick={ props.closeMenuFunc }
                 >

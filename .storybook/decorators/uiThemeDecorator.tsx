@@ -6,7 +6,6 @@ import setUiTheme from "./../../src/shared/helpers/setUiTheme"
 
 export const uiThemeDecorator: DecoratorFn = (Story, options) => {
   const { _uiTheme } = options.args
-  console.log('_uiTheme: ', _uiTheme)
 
   if (_uiTheme !== undefined && _uiTheme in Theme) {
     setUiTheme(_uiTheme)
