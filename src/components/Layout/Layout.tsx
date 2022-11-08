@@ -3,8 +3,9 @@ import React from "react"
 import HeadMeta from "./HeadMeta/HeadMeta"
 import Navbar from "./Navbar/Navbar"
 import Footer from "./Footer/Footer"
-
+import ThemeWrapper from "./themeWrapper"
 import { Theme } from "../../theme/theme.enum"
+
 
 
 interface LayoutProps {
@@ -13,10 +14,6 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
 
-    React.useEffect(() => {
-        document.documentElement.setAttribute("data-theme", Theme.dark)
-    }, [])
-
 
     return (
         <>
@@ -24,7 +21,9 @@ const Layout = ({ children }: LayoutProps) => {
             <div>
                 <Navbar />
                 <main>
-                    { children }
+                    <ThemeWrapper>
+                        { children }
+                    </ThemeWrapper>
                 </main>
                 <Footer />
             </div>
