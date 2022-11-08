@@ -27,14 +27,17 @@ describe('Navbar', () => {
         expect(getNavbarTitle()).toBeInTheDocument()
     })
 
+
     test('Бургер в меню имеет атрибут data-should-hide = false', () => {
         render(<Navbar />)
         expect(getBurgerButton()).toHaveAttribute('data-should-hide', 'false')
     })
-    test('Бургер в меню имеет атрибут data-should-hide = true после клика', () => {
+
+
+    test('Бургер в меню имеет атрибут data-should-hide = true после клика', async () => {
         render(<Navbar />)
-        userEvent.click(getBurgerButton())
-        expect(getBurgerButton()).toHaveAttribute('data-should-hide', 'false')
+        await userEvent.click(getBurgerButton())
+        expect(getBurgerButton()).toHaveAttribute('data-should-hide', 'true')
     })
 
 })

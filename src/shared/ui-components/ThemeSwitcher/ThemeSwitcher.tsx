@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles'
 import Switch from '@mui/material/Switch'
 
 import { Theme } from '../../../theme/theme.enum'
+import setUiTheme from '../../helpers/setUiTheme'
 
 
 
@@ -15,7 +16,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (_props) => {
 
     const toggleTheme: React.ChangeEventHandler<HTMLInputElement> = (event) => {
         const theme = event.target.checked ? Theme.dark : Theme.light
-        document.documentElement.setAttribute("data-theme", theme)
+        setUiTheme(theme)
         return
     }
 

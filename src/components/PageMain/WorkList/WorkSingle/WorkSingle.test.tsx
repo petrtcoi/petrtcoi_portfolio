@@ -11,7 +11,9 @@ import { linkSync } from 'fs'
 describe('Work Single', () => {
 
 
-
+    const getWorkByTitle = (title: string) => screen.getByRole("heading", { name: title })
+    const getDescription = () => screen.getByLabelText(/описание работы/i)
+    const getTagsList = () => screen.getByLabelText(/используемые технологии/i)
 
     const workOne = works[0]
     beforeAll(() => {
@@ -25,17 +27,17 @@ describe('Work Single', () => {
 
     test('Загружается заголовок работы', async () => {
         render(<WorkSingle work={ workOne } />)
-        expect(screen.getByRole("heading", {name: workOne.title})).toBeVisible()
+        expect(getWorkByTitle(workOne.title)).toBeVisible()
     })
 
     test('Выводится описание работы', async () => {
         render(<WorkSingle work={ workOne } />)
-        expect(screen.getByLabelText(/описание работы/i)).toHaveTextContent(workOne.description)
+        expect(getDescription()).toHaveTextContent(workOne.description)
     })
 
     test('Теги работы выводятся через запятую', async () => {
         render(<WorkSingle work={ workOne } />)
-        expect(screen.getByLabelText(/используемые технологии/i)).toHaveTextContent(workOne.tags.join(', '))
+        expect(getTagsList()).toHaveTextContent(workOne.tags.join(', '))
     })
 
     test('Выводит все ссылки на страницы', () => {
@@ -57,7 +59,7 @@ describe('Work Single', () => {
         render(<WorkSingle work={ { ...workOne, links: { ...workOne.links, local: undefined } } } />)
         expect(screen.queryByText(WorkLinkLabels.local)).not.toBeInTheDocument()
     })
-    
-    
+
+
 
 })

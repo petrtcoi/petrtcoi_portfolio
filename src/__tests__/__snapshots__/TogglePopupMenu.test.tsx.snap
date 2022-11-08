@@ -185,7 +185,7 @@ exports[`Toggle PopupMenu Snapshot test - после клика по бурге�
     </h1>
     <div
       aria-label="Открыть меню"
-      data-should-hide="false"
+      data-should-hide="true"
       role="button"
     >
       <div
@@ -216,7 +216,7 @@ exports[`Toggle PopupMenu Snapshot test - после клика по бурге�
     <nav
       aria-label="Popup меню"
       class="popupmenu"
-      data-popupmenu-status="closed"
+      data-popupmenu-status="open"
       style="z-index: 1000;"
     >
       <div

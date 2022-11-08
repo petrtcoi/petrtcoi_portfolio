@@ -10,35 +10,35 @@ import { MenuStatus } from '../types/ui.type'
 
 describe('Toggle PopupMenu', () => {
 
+  const getPopupMenu = () => screen.getByRole('navigation', { name: /popup меню/i })
+  const getOpenMenuButton = () => screen.getByRole('button', { name: /открыть меню/i })
+  const getCloseMenuButton = () => screen.getByRole('button', { name: /закрыть меню/i })
+
+
 
   test('Popup меню скрыто и имеет статус закрыто', () => {
     render(<Navbar />)
-    const popupMenu = screen.getByRole('navigation', { name: /popup меню/i })
-    expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.closed)
+    expect(getPopupMenu().dataset.popupmenuStatus).toEqual(MenuStatus.closed)
   })
 
   test('Клик по бургеру меняет статус меню на открыто', async () => {
     render(<Navbar />)
-    const popupMenu = screen.getByRole('navigation', { name: /popup меню/i })
-    await userEvent.click(screen.getByRole('button', { name: /открыть меню/i }))
-    expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.open)
+    await userEvent.click(getOpenMenuButton())
+    expect(getPopupMenu().dataset.popupmenuStatus).toEqual(MenuStatus.open)
   })
 
   test('Клик по бургеру делает ставит на него свойстро "скрыть"', async () => {
     render(<Navbar />)
-    const burgerButton = screen.getByRole('button', { name: /открыть меню/i })
-    await userEvent.click(burgerButton)
-    expect(burgerButton.dataset.shouldHide).toBe("true")
+    await userEvent.click(getOpenMenuButton())
+    expect(getOpenMenuButton().dataset.shouldHide).toBe("true")
   })
 
 
   test('Клик по ClosedIcon меняет статус на закрыто', async () => {
     render(<Navbar />)
-    const popupMenu = screen.getByRole('navigation', { name: /popup меню/i })
-
-    await userEvent.click(screen.getByRole('button', { name: /открыть меню/i }))
-    await userEvent.click(screen.getByRole('button', { name: /закрыть меню/i }))
-    expect(popupMenu.dataset.popupmenuStatus).toEqual(MenuStatus.closed)
+    await userEvent.click(getOpenMenuButton())
+    await userEvent.click(getCloseMenuButton())
+    expect(getPopupMenu().dataset.popupmenuStatus).toEqual(MenuStatus.closed)
   })
 
 
@@ -47,9 +47,9 @@ describe('Toggle PopupMenu', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('Snapshot test - после клика по бургеру', () => {
+  test('Snapshot test - после клика по бургеру', async () => {
     const { asFragment } = render(<Navbar />)
-    screen.getByRole('button', { name: /открыть меню/i })
+    await userEvent.click(getOpenMenuButton())
     expect(asFragment()).toMatchSnapshot()
   })
 
