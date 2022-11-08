@@ -142,3 +142,12 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+
+.hide-on-small {
+  visibility: visible;
+}
+@media screen and (max-width: 800px) {
+  .hide-on-small {
+    visibility: hidden;
+  }
+}

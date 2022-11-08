@@ -4,7 +4,24 @@ import '../src/css/globals.css'
 import '../src/css/tables.css'
 
 import '../src/theme/theme.css'
-import { ThemeDecorator } from './decorators/ThemeDecorator'
+import { uiThemeDecorator } from './decorators/uiThemeDecorator'
+
+const customViewports = {
+  desktop: {
+    name: 'Desktop',
+    styles: {
+      width: '801px',
+      height: '963px',
+    },
+  },
+  mobile: {
+    name: 'Mobile',
+    styles: {
+      width: '800px',
+      height: '801px',
+    },
+  },
+}
 
 
 export const parameters = {
@@ -15,9 +32,14 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  // viewport: {
-  //   viewports: INITIAL_VIEWPORTS,
-  // },
+  viewport: {
+    viewports: customViewports,
+  },
 }
 
-export const decorators = [ThemeDecorator]
+
+
+export const decorators = [uiThemeDecorator]
+
+
+

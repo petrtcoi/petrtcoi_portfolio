@@ -6,11 +6,11 @@ export type ClientTableHeaderProps =  {}
 const ClientTableHeader: React.FC<ClientTableHeaderProps> = (_props) => {
 
   return (
-    <thead>
+    <thead data-testid="table-clients__header">
       <tr>
         <th className="td__left">Full Name</th>
         <th>Gender</th>
-        <th>Email</th>
+        <th className="hide-on-small">Email</th>
         <th>Country</th>
         <th>FlightsQnty</th>
       </tr>

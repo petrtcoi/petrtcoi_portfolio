@@ -1,9 +1,11 @@
 import { ComponentMeta, Story } from '@storybook/react'
 import React from 'react'
-import themeControl from '../../../../shared/helpers/themeControl'
-import { Theme } from '../../../../theme/theme.enum'
 
 import ClientTableHeader, { ClientTableHeaderProps } from './CleintTableHeader'
+
+import UiThemeControl from '../../../../shared/helpers/storybookUiThemeControl'
+import { Theme } from '../../../../theme/theme.enum'
+
 
 
 
@@ -11,15 +13,18 @@ const storyDefault = {
   component: ClientTableHeader,
   title: 'ClientTable/Header',
   argTypes: {
-    ...themeControl
+    ...UiThemeControl
+  },
+  parameters: {
+    viewport: { defaultViewport: "desktop" }
   }
+
 } as ComponentMeta<typeof ClientTableHeader>
 export default storyDefault
 
 
 
 const Template: Story<ClientTableHeaderProps> = (args) => {
-
   return (
     <table>
       <ClientTableHeader { ...args } />
@@ -32,10 +37,16 @@ const Template: Story<ClientTableHeaderProps> = (args) => {
 
 export const DesktopDark = Template.bind({})
 DesktopDark.args = {
-  _theme: Theme.dark
+  _uiTheme: Theme.dark
 }
+
+export const DesktopDarkMobile = Template.bind({})
+DesktopDarkMobile.args = {
+  _uiTheme: Theme.dark
+}
+DesktopDarkMobile.parameters = { viewport: { defaultViewport: "mobile" } }
 
 export const DesktopLight = Template.bind({})
 DesktopLight.args = {
-  _theme: Theme.light
+  _uiTheme: Theme.light
 }

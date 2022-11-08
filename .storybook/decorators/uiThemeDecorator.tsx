@@ -4,10 +4,12 @@ import React from "react"
 import { Theme } from '../../src/theme/theme.enum'
 import setUiTheme from "./../../src/shared/helpers/setUiTheme"
 
-export const ThemeDecorator: DecoratorFn = (Story, options) => {
-  const { _theme } = options.args
-  if (_theme !== undefined && _theme in Theme) {
-    setUiTheme(_theme)
+export const uiThemeDecorator: DecoratorFn = (Story, options) => {
+  const { _uiTheme } = options.args
+  console.log('_uiTheme: ', _uiTheme)
+
+  if (_uiTheme !== undefined && _uiTheme in Theme) {
+    setUiTheme(_uiTheme)
   }
 
   return (
