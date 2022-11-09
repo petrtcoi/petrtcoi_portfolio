@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 import Switch from '@mui/material/Switch'
 
 import { Theme } from '../../../theme/theme.enum'
-import setUiTheme from '../../helpers/setUiTheme'
+import { setUiTheme } from '../../helpers/setUiTheme'
 
 
 

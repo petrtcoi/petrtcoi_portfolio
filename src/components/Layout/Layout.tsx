@@ -4,7 +4,7 @@ import HeadMeta from "./HeadMeta/HeadMeta"
 import Navbar from "./Navbar/Navbar"
 import Footer from "./Footer/Footer"
 
-import setUiTheme from "../../shared/helpers/setUiTheme"
+import { setUiTheme } from "../../shared/helpers/setUiTheme"
 
 
 import { Theme } from "../../theme/theme.enum"
@@ -17,7 +17,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
 
     React.useEffect(() => {
-        setUiTheme (Theme.dark)
+        setUiTheme(Theme.dark)
     }, [])
 
 

@@ -24,6 +24,7 @@ describe('Work Single', () => {
             throw new Error('Не правильно выбран для теста пример WORK. Нужны все ссылки на страницы')
         }
     })
+    
 
     test('Загружается заголовок работы', async () => {
         render(<WorkSingle work={ workOne } />)

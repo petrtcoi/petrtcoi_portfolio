@@ -19,8 +19,7 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
 
 
   return (
-    <header>
-
+    <header data-testid={"layout-header"}>
       {/* LOGO */ }
       <Link href="/">
         <ReactLogo size={ 60 } className={ "logo" } />

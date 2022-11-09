@@ -12,23 +12,21 @@ describe('WorkList Section', () => {
 
   describe("WORKLIST", () => {
 
+    beforeEach(() => {render(<WorkList works={ works } />)})
+
     test('Выводится', async () => {
-      render(<WorkList works={ [] } />)
       expect(getWorkList()).toBeVisible()
     })
 
     test('Выводит заголовок <h2> "Список работ"', async () => {
-      render(<WorkList works={ [] } />)
       expect(getWorkList()).toBeVisible()
     })
 
     test('display correct qnty of works', async () => {
-      render(<WorkList works={ works } />)
       expect(getAllWorks().length).toBe(works.length)
     })
 
     test('Display all work titles', async () => {
-      render(<WorkList works={ works } />)
       for (const work of works) {
         expect(getWorkTitleByTitle(work.title)).toBeVisible()
       }

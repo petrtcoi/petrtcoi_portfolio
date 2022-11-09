@@ -4,4 +4,4 @@ const setUiTheme = (theme: Theme) => {
   document.documentElement.setAttribute("data-theme", theme)
 }
 
-export default setUiTheme
+export { setUiTheme }
