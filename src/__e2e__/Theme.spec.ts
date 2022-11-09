@@ -29,9 +29,9 @@ test.describe('Theme swicthing', () => {
     })
 
 
-    test("При загрузке страницы у тега <html> атрибут data-theme имеет занчение dark", async () => {
+    test("При загрузке страницы у тега <html> атрибут data-theme НЕ имеет занчение light", async () => {
         const theme = await htmlTag.getAttribute('data-theme')
-        expect(theme).toBe(Theme.dark)
+        expect(theme).not.toBe(Theme.light)
 
         await expect(page).toHaveScreenshot('dark_theme.png')
     })
