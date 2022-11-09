@@ -1,12 +1,12 @@
 import { test, expect, type Page, Locator } from '@playwright/test'
 import { pages } from './helpers/pages'
+import { changeThemeDuatationMs } from './helpers/variables'
 
 
 
 test.describe('Работа кнопки открытия и закрытия меню', () => {
 
     let page: Page
-    let screenWidth: number
     let burgerIcon: Locator
     let popupMenu: Locator
     let closeMenuIcon: Locator
@@ -18,10 +18,6 @@ test.describe('Работа кнопки открытия и закрытия м
         burgerIcon = page.getByRole('button', { name: /открыть меню/i })
         popupMenu = page.getByRole('navigation', { name: /popup меню/i })
         closeMenuIcon = page.getByRole('button', { name: /закрыть меню/i })
-
-        const screen = page.viewportSize()
-        if (screen === null) throw new Error('screen is null')
-        screenWidth = screen.width
     })
 
     test("Все элементы на месте", async () => {
@@ -30,27 +26,24 @@ test.describe('Работа кнопки открытия и закрытия м
         await expect(closeMenuIcon).toBeVisible()
     })
 
-    test("Меню скрыто при открытии страницы", async () => {
-        const menuBoundary = await popupMenu.boundingBox()
-        if (menuBoundary === null) throw new Error('menuBoundary is null')
-        expect(menuBoundary.x).toBeGreaterThan(screenWidth)
+    test("Меню изначально имеет opacity: 0", async () => {
+        const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
+        expect(opacity).toBe("0")
     })
 
     test("Меню открывается после клика по Burger", async () => {
         await burgerIcon.click()
-        await page.waitForTimeout(200)
-        const menuBoundary = await popupMenu.boundingBox()
-        if (menuBoundary === null) throw new Error('menuBoundary is null')
-        expect(menuBoundary.x).toBeLessThan(screenWidth)
+        await page.waitForTimeout(changeThemeDuatationMs)
+        const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
+        expect(opacity).toBe("1")
 
     })
     test("Меню закрывается после клика по ClodeButton", async () => {
         await burgerIcon.click()
-        await page.waitForTimeout(200)
+        await page.waitForTimeout(changeThemeDuatationMs)
         await closeMenuIcon.click()
-        await page.waitForTimeout(200)
-        const menuBoundary = await popupMenu.boundingBox()
-        if (menuBoundary === null) throw new Error('menuBoundary is null')
-        expect(menuBoundary.x).toBeGreaterThan(screenWidth)
+        await page.waitForTimeout(changeThemeDuatationMs * 2)
+        const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
+        expect(opacity).toBe("0")
     })
 })

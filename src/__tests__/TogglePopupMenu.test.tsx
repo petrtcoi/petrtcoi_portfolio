@@ -25,7 +25,7 @@ describe('Toggle PopupMenu', () => {
     expect(getPopupMenu().dataset.popupmenuStatus).toEqual(MenuStatus.open)
   })
 
-  test('Клик по бургеру делает ставит на него свойстро "скрыть"', async () => {
+  test('Клик по бургеру ставит на него свойство "скрыть"', async () => {
     await userEvent.click(getOpenMenuButton())
     expect(getOpenMenuButton().dataset.shouldHide).toBe("true")
   })

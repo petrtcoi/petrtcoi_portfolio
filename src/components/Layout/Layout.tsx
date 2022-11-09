@@ -5,10 +5,7 @@ import Navbar from "./Navbar/Navbar"
 import Footer from "./Footer/Footer"
 
 import { setUiTheme } from "../../shared/helpers/setUiTheme"
-
-
 import { Theme } from "../../theme/theme.enum"
-
 
 interface LayoutProps {
     children: React.ReactNode
@@ -16,7 +13,8 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
 
-    React.useEffect(() => {
+    const useSomeEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect
+    useSomeEffect(() => {
         setUiTheme(Theme.dark)
     }, [])
 

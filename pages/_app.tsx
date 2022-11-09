@@ -9,8 +9,9 @@ import '../src/css/tables.css'
 import '../src/theme/theme.css'
 
 
-export default function App({ Component, pageProps }: AppProps) {
 
+export default function App({ Component, pageProps }: AppProps) {
+  
   return (
     <Layout>
       <Component { ...pageProps } />

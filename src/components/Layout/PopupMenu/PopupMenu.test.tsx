@@ -12,9 +12,9 @@ describe('PopupMeu', () => {
     expect(getNav()).toHaveAttribute('data-popupmenu-status', 'closed')
   })
 
+
   test('Popupmenu имеет data-popupmenu-status=opened если props.menuStatus = opened', () => {
     render(<PopupMenu menuStatus={ MenuStatus.open } closeMenuFunc={ () => { } } />)
     expect(getNav()).toHaveAttribute('data-popupmenu-status', 'open')
   })
-
 })

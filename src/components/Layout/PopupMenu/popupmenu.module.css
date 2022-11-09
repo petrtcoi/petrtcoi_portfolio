@@ -8,12 +8,15 @@
   height: 100%;
   border-left: 1px solid var(--color-grey);
 
+  opacity: 0;
+
   background-color: var(--background);
-  transition: margin 0.2s;
+  transition: margin var(--change-theme-duration),  opacity var(--change-theme-duration);
 }
 .popupmenu[data-popupmenu-status="open"] {
+  opacity: 100;
   margin-right: 0px;
-  transition: margin 0.2s, background-color var(--change-theme-duration);
+  transition: margin var(--change-theme-duration);
 }
 
 .header {
