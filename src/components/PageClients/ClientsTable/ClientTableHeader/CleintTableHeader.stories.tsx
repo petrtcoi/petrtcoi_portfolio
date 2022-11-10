@@ -1,52 +1,44 @@
 import React from 'react'
-import { Story } from '@storybook/react'
+import { Meta, Story } from '@storybook/react'
 
-import ClientTableHeader from './CleintTableHeader'
+import ClientTableHeader, { ClientTableHeaderProps } from './CleintTableHeader'
 
-import UiThemeControl from '../../../../shared/helpers/storybookUiThemeControl'
+import { UiThemeControl, UiThemeType } from '../../../../shared/helpers/storybookUiThemeControl'
 import { Theme } from '../../../../theme/theme.enum'
 
 
 
 
-const storyDefault = {
+export default {
   component: ClientTableHeader,
   title: 'ClientTable/Header',
   argTypes: {
     ...UiThemeControl
   },
   parameters: {
-    viewport: { defaultViewport: "desktop" }
+    chromatic: { viewports: [700, 801, 1200] }
   }
-
-} 
-export default storyDefault
+} as Meta<ClientTableHeaderProps>
 
 
 
-const Template: Story = (args) => {
+const Template: Story<ClientTableHeaderProps & UiThemeType> = (args) => {
   return (
     <table>
       <ClientTableHeader { ...args } />
     </table>
-
   )
-
-
 }
 
-export const DesktopDark = Template.bind({})
-DesktopDark.args = {
-  _uiTheme: Theme.dark
+export const Default = Template.bind({})
+Default.args = {
+  UiTheme: Theme.dark,
+  label: 'test'
 }
 
-export const DesktopDarkMobile = Template.bind({})
-DesktopDarkMobile.args = {
-  _uiTheme: Theme.dark
+export const DefaultMobile = Template.bind({})
+DefaultMobile.args = {
+  ...Default.args
 }
-DesktopDarkMobile.parameters = { viewport: { defaultViewport: "mobile" } }
+DefaultMobile.parameters = { viewport: { defaultViewport: "mobile" } }
 
-export const DesktopLight = Template.bind({})
-DesktopLight.args = {
-  _uiTheme: Theme.light
-}

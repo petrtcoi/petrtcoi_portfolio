@@ -16,9 +16,10 @@ const customJestConfig = {
   testMatch: [
     "**/*.test.*"
   ],
-  testPathIgnorePatterns: ["__snapshots__"],
   collectCoverageFrom: [
-    "<rootDir>/src/**/*.tsx"
+    "<rootDir>/src/**/*.tsx",
+    "!<rootDir>/src/**/*.stories.tsx",
+    "!**/__snapshots__/**"
   ]
 
 }

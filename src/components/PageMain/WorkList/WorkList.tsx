@@ -6,11 +6,9 @@ import { Work } from '../../../types/work.type'
 
 import styles from './worklist.module.css'
 
-
 type WorkListProps = {
     works: Work[]
 }
-
 
 const WorkList: React.FC<WorkListProps> = (props) => {
     return (

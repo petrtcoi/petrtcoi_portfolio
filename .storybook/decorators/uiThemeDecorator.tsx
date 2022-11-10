@@ -5,10 +5,12 @@ import { Theme } from '../../src/theme/theme.enum'
 import { setUiTheme } from "./../../src/shared/helpers/setUiTheme"
 
 export const uiThemeDecorator: DecoratorFn = (Story, options) => {
-  const { _uiTheme } = options.args
+  const { UiTheme } = options.args
 
-  if (_uiTheme !== undefined && _uiTheme in Theme) {
-    setUiTheme(_uiTheme)
+  if (UiTheme !== undefined && UiTheme in Theme) {
+    setUiTheme(UiTheme)
+  } else {
+    setUiTheme(Theme.dark)
   }
 
   return (
