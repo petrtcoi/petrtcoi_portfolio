@@ -1,0 +1,10 @@
+[data-state-should-hide="true"] {
+  opacity: 0;
+  transition: opacity var(--hide-duration);
+}
+
+@media screen and (max-width: 800px) {
+  [data-state-hide-on-small="true"] {
+    display: none;
+  }
+}

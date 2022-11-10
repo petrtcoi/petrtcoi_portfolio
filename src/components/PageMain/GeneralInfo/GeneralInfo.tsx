@@ -9,10 +9,10 @@ type GeneralInfoProps = {}
 const GeneralInfo: React.FC<GeneralInfoProps> = (_props) => {
     return (
         <div className={ styles.block }>
-            <div className={ styles.block__contacts }>
+            <div className={ styles.contacts }>
                 <Contacts />
             </div>
-            <div className={ styles.block__about }>
+            <div className={ styles.about }>
                 <AboutText />
             </div>
 

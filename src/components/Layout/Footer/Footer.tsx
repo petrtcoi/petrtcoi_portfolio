@@ -12,7 +12,6 @@ const Footer: React.FC<FooterProps> = (_props) => {
                 <div>Публицация на dev.to и vc.ru</div>
 
             </div>
-            <div className="text--small"></div>
         </footer>
     )
 }

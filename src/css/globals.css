@@ -50,27 +50,23 @@ footer {
 /* ********************* */
 /* ТИПОГРАФИЯ */
 /* ********************* */
-
-h1 {
+h1, h2, h3 {
   margin: 0;
   padding: 0;
+  font-family: Raleway, Helvetica, sans-serif;
+}
+
+h1 {
   font-size: 1.8rem;
   line-height: 2.8rem;
-  font-family: Raleway, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
 }
 h2 {
-  margin: 0;
-  padding: 0;
   font-size: 1.4rem;
-  font-family: Raleway, Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 h3 {
-  margin: 0;
-  padding: 0;
-  font-family: Raleway, Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 p {
@@ -79,7 +75,6 @@ p {
 .no-margin {
   margin: 0;
 }
-
 .comment--small {
   font-weight: 300;
   font-size: var(--text-small);
@@ -121,33 +116,17 @@ a:hover {
 /* ДРУГОЕ */
 /* ********************* */
 
-.icon-button {
+.svg__button {
   cursor: pointer;
   fill: var(--color-text-main);
 }
-.icon-button:hover {
+.svg__button:hover {
   fill: var(--color-accent);
 }
-[data-should-hide="true"] {
-  opacity: 0;
-  transition: opacity var(--hide-duration);
-}
-
-.logo {
-  fill: var(--color-accent);
-}
-
-.svg-icon-text {
+.svg__text {
   fill: var(--color-text-main);
   display: flex;
   justify-content: center;
 }
 
-.hide-on-small {
-  visibility: visible;
-}
-@media screen and (max-width: 800px) {
-  .hide-on-small {
-    visibility: hidden;
-  }
-}
+

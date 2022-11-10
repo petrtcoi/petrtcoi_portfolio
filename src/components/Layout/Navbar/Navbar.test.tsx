@@ -26,13 +26,13 @@ describe('Navbar', () => {
 
 
     test('Бургер в меню имеет атрибут data-should-hide = false', () => {
-        expect(getBurgerButton()).toHaveAttribute('data-should-hide', 'false')
+        expect(getBurgerButton()).toHaveAttribute('data-state-should-hide', 'false')
     })
 
 
     test('Бургер в меню имеет атрибут data-should-hide = true после клика', async () => {
         await userEvent.click(getBurgerButton())
-        expect(getBurgerButton()).toHaveAttribute('data-should-hide', 'true')
+        expect(getBurgerButton()).toHaveAttribute('data-state-should-hide', 'true')
     })
 
 })

@@ -15,7 +15,7 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
 
     return (
         <nav
-            data-popupmenu-status={ props.menuStatus }
+            data-state-popupmenu-status={ props.menuStatus }
             aria-label="Popup меню"
             className={ styles.popupmenu }
             style={ { zIndex: 1000 } }
@@ -28,7 +28,7 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
                     className={ styles.header__closebutton }
                     onClick={ props.closeMenuFunc }
                 >
-                    <CancelIcon size={ 35 } className={ "icon-button" } />
+                    <CancelIcon size={ 35 } className={ "svg__button" } />
                 </div>
                 <div className={ styles.header__title }>
                     МЕНЮ
@@ -43,9 +43,6 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
 
         </nav>
     )
-
-
-
 }
 
 export default PopupMenu

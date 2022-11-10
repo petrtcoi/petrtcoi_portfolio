@@ -14,7 +14,7 @@ type WorkListProps = {
 
 const WorkList: React.FC<WorkListProps> = (props) => {
     return (
-        <div className={ styles.block } role="list" aria-label="Список работ">
+        <div role="list" aria-label="Список работ" className={ styles.block }>
             <h2 style={ { textAlign: "center" } }>Список работ</h2>
             <div className={ styles.worklist }>
                 {

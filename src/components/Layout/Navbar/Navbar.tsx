@@ -19,10 +19,10 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
 
 
   return (
-    <header data-testid={"layout-header"}>
+    <header data-testid={ "layout-header" }>
       {/* LOGO */ }
       <Link href="/">
-        <ReactLogo size={ 60 } className={ "logo" } />
+        <ReactLogo size={ 60 } className={ styles.logo } />
       </Link>
 
 
@@ -36,10 +36,10 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
       <div
         aria-label="Открыть меню"
         role="button"
-        data-should-hide={ menuStatus === MenuStatus.open ? "true" : "false" }
+        data-state-should-hide={ menuStatus === MenuStatus.open ? "true" : "false" }
         onClick={ () => setMenuStatus(MenuStatus.open) }
       >
-        <BurgerMenuIcon size={ 25 } className={ "icon-button" } />
+        <BurgerMenuIcon size={ 25 } className={ "svg__button" } />
       </div>
 
 

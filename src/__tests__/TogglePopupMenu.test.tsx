@@ -17,24 +17,24 @@ describe('Toggle PopupMenu', () => {
   beforeEach(() => render(<Navbar />))
 
   test('Popup меню скрыто и имеет статус закрыто', () => {
-    expect(getPopupMenu().dataset.popupmenuStatus).toEqual(MenuStatus.closed)
+    expect(getPopupMenu().dataset.statePopupmenuStatus).toEqual(MenuStatus.closed)
   })
 
   test('Клик по бургеру меняет статус меню на открыто', async () => {
     await userEvent.click(getOpenMenuButton())
-    expect(getPopupMenu().dataset.popupmenuStatus).toEqual(MenuStatus.open)
+    expect(getPopupMenu().dataset.statePopupmenuStatus).toEqual(MenuStatus.open)
   })
 
   test('Клик по бургеру ставит на него свойство "скрыть"', async () => {
     await userEvent.click(getOpenMenuButton())
-    expect(getOpenMenuButton().dataset.shouldHide).toBe("true")
+    expect(getOpenMenuButton().dataset.stateShouldHide).toBe("true")
   })
 
 
   test('Клик по ClosedIcon меняет статус на закрыто', async () => {
     await userEvent.click(getOpenMenuButton())
     await userEvent.click(getCloseMenuButton())
-    expect(getPopupMenu().dataset.popupmenuStatus).toEqual(MenuStatus.closed)
+    expect(getPopupMenu().dataset.statePopupmenuStatus).toEqual(MenuStatus.closed)
   })
 
 })

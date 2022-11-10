@@ -7,83 +7,78 @@ import styles from './work.module.css'
 
 
 type WorkSingleProps = {
-    work: Work
+  work: Work
 }
 
 const WorkSingle: React.FC<WorkSingleProps> = (props) => {
-    return (
-        <div
-            aria-label="Работа"
-            role="listitem"
-            className={ styles.work }
-        >
-            <div style={ { display: "flex", flexDirection: "row", alignItems: "baseline", justifyContent: "space-between" } }>
-                <h3 className={ styles.work__title }>
-                    { props.work.title }
-                </h3>
-                <p aria-label="Дата публицации" className="no-margin comment--small">
-                    { props.work.publishDate }
-                </p>
-            </div>
+  return (
+    <div
+      aria-label="Работа"
+      role="listitem"
+      className={ styles.work }
+    >
+      <div style={ { display: "flex", flexDirection: "row", alignItems: "baseline", justifyContent: "space-between" } }>
+        <h3 className={ styles.title }>
+          { props.work.title }
+        </h3>
+        <p aria-label="Дата публицации" className="no-margin comment--small">
+          { props.work.publishDate }
+        </p>
+      </div>
 
+      <p aria-label="Описание работы" className={ "text--small no-margin" } >
+        { props.work.description }
+      </p>
 
-            <p aria-label="Описание работы" className={ "text--small no-margin" } >
-                { props.work.description }
-            </p>
+      <p aria-label="Используемые технологии" className={ "text--small no-margin accent" } >
+        { props.work.tags.join(', ') }
+      </p>
 
-            <p aria-label="Используемые технологии" className={ "text--small no-margin accent" } >
-                { props.work.tags.join(', ') }
-            </p>
-
-            <div
-                role="list"
-                aria-label="Ссылки на публикации работы"
-                className={ styles.work__sources }
+      <div
+        role="list"
+        aria-label="Ссылки на публикации работы"
+        className={ styles.sourceslist }
+      >
+        <p className="text--bold text--small no-margin">
+          Публикации:
+        </p>
+        { props.work.links.devto &&
+          <div className={ styles.source } role="listitem">
+            <Link
+              href={ props.work.links.devto }
+              target={ "_blank" }
+              rel="noreferrer"
             >
+              { WorkLinkLabels.devto }
+            </Link>
+          </div>
+        }
 
-                <p className="text--bold text--small no-margin">
-                    Подробное описание работы:
-                </p>
+        { props.work.links.vcru &&
+          <div className={ styles.source } role="listitem">
+            <Link
+              href={ props.work.links.vcru }
+              target={ "_blank" }
+              rel="noreferrer"
+            >
+              { WorkLinkLabels.vcru }
+            </Link>
+          </div>
+        }
 
-                { props.work.links.devto &&
-                    <div className={ styles.work__source } role="listitem">
-                        <Link
-                            href={ props.work.links.devto }
-                            target={ "_blank" }
-                            rel="noreferrer"
-                            className={ styles.work__links__el }
-                        >
-                            { WorkLinkLabels.devto }
-                        </Link>
-                    </div>
-                }
-
-                { props.work.links.vcru &&
-                    <div className={ styles.work__source } role="listitem">
-                        <Link
-                            href={ props.work.links.vcru }
-                            target={ "_blank" }
-                            rel="noreferrer"
-                            className={ styles.work__links__el }
-                        >
-                            { WorkLinkLabels.vcru }
-                        </Link>
-                    </div>
-                }
-
-                { props.work.links.local &&
-                    <div className={ styles.work__source } role="listitem">
-                        <Link
-                            href={ props.work.links.local }
-                            target={ "_blank" }
-                        >
-                            <span className={ styles.work__links__el }> { WorkLinkLabels.local }</span>
-                        </Link>
-                    </div>
-                }
-            </div>
-        </div>
-    )
+        { props.work.links.local &&
+          <div className={ styles.source } role="listitem">
+            <Link
+              href={ props.work.links.local }
+              target={ "_blank" }
+            >
+              { WorkLinkLabels.local }
+            </Link>
+          </div>
+        }
+      </div>
+    </div>
+  )
 
 }
 

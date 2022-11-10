@@ -15,7 +15,7 @@ const Contacts: React.FC<ContactsProps> = (_props) => {
 
     return (
         <div className={styles.block}>
-            <div className={ styles.portfolioimage }>
+            <div className={ styles.photo }>
                 <Image
                     data-testid="portfolio-photo"
                     priority
@@ -31,7 +31,7 @@ const Contacts: React.FC<ContactsProps> = (_props) => {
             <div>
                 <div className={ styles.row } >
                     <div className={ styles.row__icon }>
-                        <TelegramIcon size={ 20 } className={ "svg-icon-text" } />
+                        <TelegramIcon size={ 20 } className={"svg__text" } />
                     </div>
                     <div className={ styles.row__data }>
                         <Link
@@ -45,7 +45,7 @@ const Contacts: React.FC<ContactsProps> = (_props) => {
 
                 <div className={ styles.row } >
                     <div className={ styles.row__icon }>
-                        <LinkedinIcon size={ 15 } className={ "svg-icon-text" } />
+                        <LinkedinIcon size={ 15 } className={ "svg__text" } />
                     </div>
                     <div className={ styles.row__data }>
                         <Link
@@ -58,7 +58,7 @@ const Contacts: React.FC<ContactsProps> = (_props) => {
                 </div>
                 <div className={ styles.row } >
                     <div className={ styles.row__icon }>
-                        <EmailIcon size={ 15 } className={ "svg-icon-text" } />
+                        <EmailIcon size={ 15 } className={ "svg__text" } />
                     </div>
                     <div className={ styles.row__data }>
                         <Link
@@ -71,7 +71,7 @@ const Contacts: React.FC<ContactsProps> = (_props) => {
                 </div>
                 <div className={ styles.row } >
                     <div className={ styles.row__icon }>
-                        <EmailIcon size={ 15 } className={ "svg-icon-text" } />
+                        <EmailIcon size={ 15 } className={ "svg__text" } />
                     </div>
                     <div className={ styles.row__data }>
 

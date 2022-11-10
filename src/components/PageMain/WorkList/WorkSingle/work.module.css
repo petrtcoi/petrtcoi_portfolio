@@ -22,19 +22,17 @@
   color: var(--color-accent);
 }
 
-.work__sources {
+.sourceslist {
   margin-top: 20px;
 }
-
-.work__source {
+.source {
   display: inline-block;
   margin: 0px;
   padding: 10px;
-  /* font-size: var(--text-small); */
   border: 1px solid var(--background);
   border-radius: 20px;
 }
-.work__source:hover {
+.source:hover {
   border: 1px solid var(--color-accent);
 }
 
