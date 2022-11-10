@@ -1,10 +1,14 @@
 import { Theme } from "../../theme/theme.enum"
 
-const storybookUiThemeControl = {
-  _uiTheme: {
+
+
+export const UiThemeControl = {
+  UiTheme: {
     options: Theme,
-    control: { type: 'radio' }
+    control: { type: 'radio' },
   }
 }
 
-export default storybookUiThemeControl
+export type UiThemeType = { UiTheme: Theme }
+
+
