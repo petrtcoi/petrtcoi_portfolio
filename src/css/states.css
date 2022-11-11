@@ -1,6 +1,6 @@
 [data-state-should-hide="true"] {
   opacity: 0;
-  transition: opacity var(--hide-duration);
+  transition: opacity 1s;
 }
 
 @media screen and (max-width: 800px) {

@@ -22,15 +22,14 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
         >
             {/* ШАПКА МЕНЮ */ }
             <div className={ styles.header }>
-                <div
+                <button
                     aria-label="Закрыть меню"
-                    role="button"
-                    className={ styles.header__closebutton }
+                    className={ styles.closebutton }
                     onClick={ props.closeMenuFunc }
                 >
                     <CancelIcon size={ 35 } className={ "svg__button" } />
-                </div>
-                <div className={ styles.header__title }>
+                </button>
+                <div className={ styles.title }>
                     МЕНЮ
                 </div>
             </div>

@@ -12,9 +12,8 @@ type WorkSingleProps = {
 
 const WorkSingle: React.FC<WorkSingleProps> = (props) => {
   return (
-    <div
+    <li
       aria-label="Работа"
-      role="listitem"
       className={ styles.work }
     >
       <div style={ { display: "flex", flexDirection: "row", alignItems: "baseline", justifyContent: "space-between" } }>
@@ -77,7 +76,7 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
           </div>
         }
       </div>
-    </div>
+    </li>
   )
 
 }

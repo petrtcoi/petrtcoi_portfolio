@@ -5,21 +5,19 @@ import { works } from '../../../__tests__/data/works'
 
 describe('WorkList Section', () => {
 
-  const getWorkList = () => screen.getByRole('list', { name: /список работ/i })
+  const getWorkListTitle = () => screen.getByRole('heading', { name: /список работ/i, level: 2 })
   const getAllWorks = () => screen.getAllByRole('listitem', { name: /работа/i })
   const getWorkTitleByTitle = (title: string) => screen.getByRole('heading', { name: title })
 
 
   describe("WORKLIST", () => {
 
-    beforeEach(() => {render(<WorkList works={ works } />)})
+    beforeEach(() => { render(<WorkList works={ works } />) })
 
-    test('Выводится', async () => {
-      expect(getWorkList()).toBeVisible()
-    })
+
 
     test('Выводит заголовок <h2> "Список работ"', async () => {
-      expect(getWorkList()).toBeVisible()
+      expect(getWorkListTitle()).toBeVisible()
     })
 
     test('display correct qnty of works', async () => {

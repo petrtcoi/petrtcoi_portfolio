@@ -33,14 +33,14 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
 
 
       {/* BURGER MENU */ }
-      <div
+      <button
         aria-label="Открыть меню"
-        role="button"
         data-state-should-hide={ menuStatus === MenuStatus.open ? "true" : "false" }
         onClick={ () => setMenuStatus(MenuStatus.open) }
+        className={styles.burgerbutton}
       >
         <BurgerMenuIcon size={ 25 } className={ "svg__button" } />
-      </div>
+      </button>
 
 
       {/* POPUPMENU */ }

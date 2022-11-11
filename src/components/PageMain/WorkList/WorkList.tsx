@@ -12,15 +12,15 @@ type WorkListProps = {
 
 const WorkList: React.FC<WorkListProps> = (props) => {
     return (
-        <div role="list" aria-label="Список работ" className={ styles.block }>
+        <div aria-label="Список работ" className={ styles.block }>
             <h2 style={ { textAlign: "center" } }>Список работ</h2>
-            <div className={ styles.worklist }>
+            <ul className={ styles.worklist }>
                 {
                     props.works.map((work, index) => {
                         return (<WorkSingle work={ work } key={ index } />)
                     })
                 }
-            </div>
+            </ul>
         </div>
     )
 }

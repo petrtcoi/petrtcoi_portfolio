@@ -25,9 +25,12 @@
   align-items: center;
   border-bottom: 1px dotted var(--color-grey);
 }
-.header__title {
+.title {
   display: "inline-block";
 }
-.header__closebutton {
+.closebutton {
   display: "inline-block";
+  border: 0;
+  background-color: var(--background);
+  transition: background-color var(--change-theme-duration);
 }

@@ -5,3 +5,8 @@
 .logo {
   fill: var(--color-accent);
 }
+.burgerbutton {
+  border: 0;
+  background-color: var(--background);
+  transition: background-color var(--change-theme-duration);
+}
