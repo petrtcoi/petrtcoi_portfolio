@@ -7,17 +7,17 @@ import styles from './generalinfo.module.css'
 type GeneralInfoProps = {}
 
 const GeneralInfo: React.FC<GeneralInfoProps> = (_props) => {
-    return (
-        <div className={ styles.block }>
-            <div className={ styles.contacts }>
-                <Contacts />
-            </div>
-            <div className={ styles.about }>
-                <AboutText />
-            </div>
+  return (
+    <section className={ styles.block }>
+      <div className={ styles.contacts }>
+        <Contacts />
+      </div>
+      <div className={ styles.about }>
+        <AboutText />
+      </div>
 
-        </div>
-    )
+    </section>
+  )
 }
 
 export default GeneralInfo

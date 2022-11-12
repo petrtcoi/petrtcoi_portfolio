@@ -20,9 +20,9 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
         <h3 className={ styles.title }>
           { props.work.title }
         </h3>
-        <p aria-label="Дата публицации" className="no-margin comment--small">
+        <time aria-label="Дата публицации" className="no-margin comment--small">
           { props.work.publishDate }
-        </p>
+        </time>
       </div>
 
       <p aria-label="Описание работы" className={ "text--small no-margin" } >

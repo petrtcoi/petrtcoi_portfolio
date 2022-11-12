@@ -19,7 +19,8 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
 
 
   return (
-    <header data-testid={ "layout-header" }>
+    <div data-testid={ "layout-header" } className={styles.headerblock}>
+      
       {/* LOGO */ }
       <Link href="/">
         <ReactLogo size={ 60 } className={ styles.logo } />
@@ -49,7 +50,7 @@ const Navbar: React.FC<NavbarProps> = (_props) => {
         closeMenuFunc={ () => setMenuStatus(MenuStatus.closed) }
       />
 
-    </header>
+    </div>
   )
 
 }

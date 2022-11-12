@@ -8,29 +8,34 @@ import { setUiTheme } from "../../shared/helpers/setUiTheme"
 import { Theme } from "../../theme/theme.enum"
 
 interface LayoutProps {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {
 
-    const useSomeEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect
-    useSomeEffect(() => {
-        setUiTheme(Theme.dark)
-    }, [])
+  const useSomeEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect
+  useSomeEffect(() => {
+    setUiTheme(Theme.dark)
+  }, [])
 
 
-    return (
-        <>
-            <HeadMeta />
-            <div>
-                <Navbar />
-                <main>
-                    { children }
-                </main>
-                <Footer />
-            </div>
-        </>
-    )
+  return (
+    <>
+      <HeadMeta />
+      <div>
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          { children }
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+
+      </div>
+    </>
+  )
 }
 
 export default Layout

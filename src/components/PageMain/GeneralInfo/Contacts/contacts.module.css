@@ -19,6 +19,7 @@
   width: 200px;
 }
 .row__icon {
+  align-self: center;
   width: 40px;
 }
 .row__data {

@@ -1,7 +1,9 @@
 [data-state-should-hide="true"] {
   opacity: 0;
-  transition: opacity 1s;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
 }
+
 
 @media screen and (max-width: 800px) {
   [data-state-hide-on-small="true"] {

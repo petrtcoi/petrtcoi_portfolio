@@ -33,46 +33,46 @@ const Contacts: React.FC<ContactsProps> = (_props) => {
                     <div className={ styles.row__icon }>
                         <TelegramIcon size={ 20 } className={"svg__text" } />
                     </div>
-                    <div className={ styles.row__data }>
+                    <address className={ styles.row__data }>
                         <Link
                             href="http://t.me/thepetrtcoi"
                             target={ "_blank" }
                             rel="noreferrer">
                             @thepetrtcoi
                         </Link>
-                    </div>
+                    </address>
                 </div>
 
                 <div className={ styles.row } >
                     <div className={ styles.row__icon }>
                         <LinkedinIcon size={ 15 } className={ "svg__text" } />
                     </div>
-                    <div className={ styles.row__data }>
+                    <address className={ styles.row__data }>
                         <Link
                             href="https://www.linkedin.com/in/petrtcoi/"
                             target={ "_blank" }
                             rel="noreferrer">
                             /petrtcoi
                         </Link>
-                    </div>
+                    </address>
                 </div>
                 <div className={ styles.row } >
                     <div className={ styles.row__icon }>
                         <EmailIcon size={ 15 } className={ "svg__text" } />
                     </div>
-                    <div className={ styles.row__data }>
+                    <address className={ styles.row__data }>
                         <Link
                             href="mailto:petrtcoi@gmail.com"
                             target={ "_blank" }
                             rel="noreferrer">
                             petrtcoi@gmail.com
                         </Link>
-                    </div>
+                    </address>
                 </div>
                 <div className={ styles.row } >
-                    <div className={ styles.row__icon }>
+                    <address className={ styles.row__icon }>
                         <EmailIcon size={ 15 } className={ "svg__text" } />
-                    </div>
+                    </address>
                     <div className={ styles.row__data }>
 
                         petrtcoi@<a
