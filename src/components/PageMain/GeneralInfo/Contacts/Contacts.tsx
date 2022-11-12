@@ -18,9 +18,9 @@ const Contacts: React.FC<ContactsProps> = (_props) => {
             <div className={ styles.photo }>
                 <Image
                     data-testid="portfolio-photo"
-                    priority
-                    src={ "/images/portfolio-image.jpg" }
+                    priority={true}
                     fill
+                    src={ "/images/portfolio-image.jpg" }
                     sizes="(max-width: 800px) 200px
                             (min-width: 801px) 300px"
                     alt={ "Фотография Petr Tcoi для портфолио" }
