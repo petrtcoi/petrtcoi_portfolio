@@ -1,9 +1,10 @@
 import React from 'react'
 import AboutText from './AboutText/AboutText'
 import Contacts from '../../_shared/Contacts/Contacts'
+import PortfolioPhoto from './ProtfolioPhoto/ProtfolioPhoto'
+
 
 import styles from './generalinfo.module.css'
-import PortfolioPhoto from './ProtfolioPhoto/ProtfolioPhoto'
 
 type GeneralInfoProps = {}
 
@@ -16,9 +17,7 @@ const GeneralInfo: React.FC<GeneralInfoProps> = (_props) => {
           <Contacts />
         </div>
       </div>
-      <div>
-        <AboutText />
-      </div>
+      <AboutText />
     </section >
   )
 }

@@ -31,7 +31,7 @@ const AboutText: React.FC<AboutTextProps> = (_props) => {
             Github
           </Link>
         </span>
-        .<br/>Буду признателен за любую обратную связь.
+        . Буду признателен за любую обратную связь.
       </p>
     </div>
   )
