@@ -1,13 +1,7 @@
 import type { AppProps } from 'next/app'
 import Layout from '../src/components/Layout/Layout'
 
-import '../src/css/variables.css'
-import '../src/css/states.css'
-import '../src/css/fonts-faces.css'
-import '../src/css/globals.css'
-import '../src/css/tables.css'
-
-import '../src/theme/theme.css'
+import '../src/assets/styles/_styles.css'
 
 
 

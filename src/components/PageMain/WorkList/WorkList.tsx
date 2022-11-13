@@ -1,9 +1,6 @@
 import React from 'react'
-
 import WorkSingle from './WorkSingle/WorkSingle'
-
-import { Work } from '../../../types/work.type'
-
+import { Work } from '../../../assets/types/work.type'
 import styles from './worklist.module.css'
 
 type WorkListProps = {
@@ -13,7 +10,7 @@ type WorkListProps = {
 const WorkList: React.FC<WorkListProps> = (props) => {
   return (
     <section aria-label="Список работ" className={ styles.block }>
-      <h2 style={ { textAlign: "center" } }>Список работ</h2>
+      <h2 className={styles.header}>Список работ</h2>
       <ul className={ styles.worklist }>
         {
           props.works.map((work, index) => {

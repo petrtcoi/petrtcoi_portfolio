@@ -1,18 +1,17 @@
 .block {
   display: flex;
   flex-flow: row nowrap;
+  margin-inline: auto;
+  max-width: 800px;
 }
 @media (max-width: 800px) {
   .block {
     flex-flow: column;
   }
+  .leftcolumn {
+    margin-bottom: 50px;
+  }
 }
 
-.contacts {
-  flex-shrink: 2;
-  min-width: 300px;
-}
-.about {
-  flex-shrink: 1;
-}
+
 

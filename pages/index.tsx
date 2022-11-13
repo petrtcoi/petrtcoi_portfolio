@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import GeneralInfo from '../src/components/PageMain/GeneralInfo/GeneralInfo'
 import WorkList from '../src/components/PageMain/WorkList/WorkList'
-import { works } from '../src/dataset/works'
+import { works } from '../src/server/dataset/works'
 
 
 

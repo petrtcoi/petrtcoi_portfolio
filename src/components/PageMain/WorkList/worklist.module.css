@@ -1,5 +1,12 @@
 .block {
-  margin-top: 50px;
+  margin-top: 100px;
+  margin-inline: auto;
+  width: 80%;
+}
+.header {
+  font-size: 1rem;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 .worklist {
   display: flex;

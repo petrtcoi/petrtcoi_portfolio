@@ -7,13 +7,13 @@
   height: 100%;
   opacity: 0; /* STATE */
   border-left: 1px solid var(--color-grey);
-  background-color: var(--background);
-  transition: margin var(--change-theme-duration),  opacity var(--change-theme-duration), background-color var(--change-theme-duration);
+  background-color: var(--color-background);
+  transition: margin var(--basic-duration),  opacity var(--basic-duration), background-color var(--basic-duration);
 }
 .popupmenu[data-state-popupmenu-status="open"] {
   opacity: 100;
   margin-right: 0px;
-  transition: margin var(--change-theme-duration), background-color var(--change-theme-duration);
+  transition: margin var(--basic-duration), background-color var(--basic-duration);
 }
 .content {
   padding: 20px 10px;
@@ -31,6 +31,6 @@
 .closebutton {
   display: "inline-block";
   border: 0;
-  background-color: var(--background);
-  transition: background-color var(--change-theme-duration);
+  background-color: var(--color-background);
+  transition: background-color var(--basic-duration);
 }

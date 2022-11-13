@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
-import { MenuStatus } from '../../../types/ui.type'
+
 import PopupMenu from './PopupMenu'
+import { MenuStatus } from '../../../assets/types/ui.type'
 
 
 describe('PopupMeu', () => {

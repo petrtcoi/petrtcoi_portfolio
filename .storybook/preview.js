@@ -1,13 +1,7 @@
 import { uiThemeDecorator } from './decorators/uiThemeDecorator'
 
+import '../src/assets/styles/_styles.css'
 
-import '../src/css/variables.css'
-import '../src/css/states.css'
-import '../src/css/fonts-faces.css'
-import '../src/css/globals.css'
-import '../src/css/tables.css'
-
-import '../src/theme/theme.css'
 
 
 

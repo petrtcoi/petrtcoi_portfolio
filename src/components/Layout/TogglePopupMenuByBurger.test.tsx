@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react'
-
 import userEvent from '@testing-library/user-event'
-import Navbar from '../../components/Layout/Navbar/Navbar'
+import { MenuStatus } from '../../assets/types/ui.type'
 
-import { MenuStatus } from '../../types/ui.type'
+import Header from './Header/Header'
 
 
 
@@ -13,7 +12,7 @@ describe('Toggle PopupMenu by Burger ', () => {
   const getOpenMenuButton = () => screen.getByRole('button', { name: /открыть меню/i })
   const getCloseMenuButton = () => screen.getByRole('button', { name: /закрыть меню/i })
 
-  beforeEach(() => render(<Navbar />))
+  beforeEach(() => render(<Header />))
 
   test('Popup меню скрыто и имеет статус закрыто', () => {
     expect(getPopupMenu().dataset.statePopupmenuStatus).toEqual(MenuStatus.closed)

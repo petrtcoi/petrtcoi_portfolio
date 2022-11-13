@@ -1,5 +1,5 @@
 import { test, expect, type Page, Locator } from '@playwright/test'
-import { Theme } from '../theme/theme.enum'
+import { ThemeColorSchema } from '../assets/types/ui.type'
 import { pages } from './helpers/pages'
 import { changeThemeDuatationMs } from './helpers/variables'
 
@@ -31,7 +31,7 @@ test.describe('Theme swicthing', () => {
 
     test("При загрузке страницы у тега <html> атрибут data-theme НЕ имеет занчение light", async () => {
         const theme = await htmlTag.getAttribute('data-theme')
-        expect(theme).not.toBe(Theme.light)
+        expect(theme).not.toBe(ThemeColorSchema.light)
 
         await expect(page).toHaveScreenshot('dark_theme.png')
     })
@@ -43,7 +43,9 @@ test.describe('Theme swicthing', () => {
         await page.waitForTimeout(changeThemeDuatationMs)
         await themeSwitcher.click()
         const theme = await htmlTag.getAttribute('data-theme')
-        expect(theme).toBe(Theme.light)
+        expect(theme).toBe(ThemeColorSchema.light)
+
+        await expect(page).toHaveScreenshot('light_theme.png')
     })
 
 
@@ -55,7 +57,7 @@ test.describe('Theme swicthing', () => {
         await themeSwitcher.click()
         await themeSwitcher.click()
         const theme = await htmlTag.getAttribute('data-theme')
-        expect(theme).toBe(Theme.dark)
+        expect(theme).toBe(ThemeColorSchema.dark)
     })
 
 })

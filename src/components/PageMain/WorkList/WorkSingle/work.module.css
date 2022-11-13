@@ -1,16 +1,15 @@
 .work {
-  margin-inline: auto;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 30px;
-  width: 80%;
   border: 1px solid var(--color-grey);
   border-radius: 30px;
 }
 
-
-.work__title {
+.title {
   margin-top: 0px;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .work__description {
@@ -22,17 +21,42 @@
   color: var(--color-accent);
 }
 
-.sourceslist {
-  margin-top: 20px;
+.sourselist {
+  display: inline;
+  padding-left: 20px;
+  list-style: none;
+  font-size: 1rem;
 }
-.source {
+.sourselist li {
   display: inline-block;
-  margin: 0px;
-  padding: 10px;
-  border: 1px solid var(--background);
-  border-radius: 20px;
 }
-.source:hover {
-  border: 1px solid var(--color-accent);
+.sourselist li:not(:last-child)::after {
+  content: ",";
+  margin-right: 20px;
 }
 
+.sourselink {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 400;
+}
+.sourselink::before {
+  position: relative;
+  content: "www.";
+  /* color: #777777; */
+  font-size: 0.7rem;
+  font-weight: 100;
+}
+.sourselink::after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid var(--color-accent);
+  scale: 0;
+  transition: scale var(--basic-duration) ease-in-out;
+  transform-origin: right;
+}
+.sourselink:hover::after {
+  scale: 1;
+  transform-origin: left;
+}

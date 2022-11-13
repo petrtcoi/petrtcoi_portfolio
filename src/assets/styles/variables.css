@@ -1,0 +1,20 @@
+:root {
+  --color-main: #e6e5e5;
+  --color-grey: #868687;
+  --color-background: #202124;
+  --color-accent: #ee6e73;
+  --color-green: #0ca024;
+  --color-red: #f23207;
+  --color-blue: #1042e6;
+  --color-gold: #ac710b;
+
+  --basic-duration: 0.2s;
+  --desktop-breakpoint: 800px;
+}
+
+[data-theme="light"] {
+  --color-main: #000000;
+  --color-background: #FFFFFF;
+}
+
+

@@ -1,16 +1,11 @@
 import React from 'react'
 
 
-export interface ClientTableHeaderProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
+export type ClientTableHeaderProps = {
   label?: string
 }
 
-/**
- * Primary UI component for user interaction
- */
+
 const ClientTableHeader: React.FC<ClientTableHeaderProps> = (_props: ClientTableHeaderProps) => {
 
   return (

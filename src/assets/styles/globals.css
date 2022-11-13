@@ -1,0 +1,110 @@
+html,
+body {
+  margin-inline: auto;
+  max-width: 1000px;
+  font-family: Railway, Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-main);
+  background-color: var(--color-background);
+  transition: background-color var(--basic-duration);
+}
+main {
+  flex-grow: 1;
+  padding-inline: 20px;
+}
+
+
+/* ********************* */
+/* ТЕКСТ */
+/* ********************* */
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+h3 {
+  font-weight: 600;
+}
+p {
+  margin: 1.2em 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+
+.text--small {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+.text--bold {
+  font-weight: 500;
+}
+.text--grey {
+  color: var(--color-grey);
+}
+.text--green {
+  color: var(--color-green)
+}
+.text--red {
+  color: var(--color-red)
+}
+.text--blue {
+  color: var(--color-blue)
+}
+.text--gold {
+  color: var(--color-gold)
+}
+.accent {
+  color: var(--color-accent);
+}
+
+
+/* ********************* */
+/* ССЫЛКИ */
+/* ********************* */
+
+a {
+  color: var(--color-main);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-accent);
+}
+.link--accent {
+  color: var(--color-accent);
+}
+.link--accent:hover {
+  text-decoration: underline;
+}
+
+/* ********************* */
+/* ПРОЧЕЕ */
+/* ********************* */
+.svg__button {
+  cursor: pointer;
+  fill: var(--color-main);
+}
+.svg__button:hover {
+  fill: var(--color-accent);
+}
+.svg__text {
+  fill: var(--color-main);
+  display: flex;
+  justify-content: center;
+}

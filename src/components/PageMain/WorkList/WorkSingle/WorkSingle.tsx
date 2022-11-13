@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
+import { Work, WorkLinkLabels } from '../../../../assets/types/work.type'
 
-import { Work, WorkLinkLabels } from '../../../../types/work.type'
 
 import styles from './work.module.css'
 
@@ -20,7 +20,7 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
         <h3 className={ styles.title }>
           { props.work.title }
         </h3>
-        <time aria-label="Дата публицации" className="no-margin comment--small">
+        <time aria-label="Дата публицации" className="no-margin text--small text--grey">
           { props.work.publishDate }
         </time>
       </div>
@@ -29,53 +29,56 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
         { props.work.description }
       </p>
 
-      <p aria-label="Используемые технологии" className={ "text--small no-margin accent" } >
+      <p aria-label="Используемые технологии" className={ "text--small no-margin accent" }>
         { props.work.tags.join(', ') }
       </p>
 
-      <div
-        role="list"
-        aria-label="Ссылки на публикации работы"
-        className={ styles.sourceslist }
+
+      <span
+        style={ { display: "inline-block", marginTop: "20px" } }
+        className="text--small text--grey no-margin"
       >
-        <p className="text--bold text--small no-margin">
-          Публикации:
-        </p>
+        Публикации:
+      </span>
+      <ul className={ styles.sourselist }>
         { props.work.links.devto &&
-          <div className={ styles.source } role="listitem">
+          <li>
             <Link
               href={ props.work.links.devto }
               target={ "_blank" }
               rel="noreferrer"
             >
-              { WorkLinkLabels.devto }
+              <span className={ styles.sourselink }>{ WorkLinkLabels.devto }</span>
             </Link>
-          </div>
+          </li>
         }
-
         { props.work.links.vcru &&
-          <div className={ styles.source } role="listitem">
+          <li>
             <Link
               href={ props.work.links.vcru }
               target={ "_blank" }
               rel="noreferrer"
             >
-              { WorkLinkLabels.vcru }
+              <span className={ styles.sourselink }>{ WorkLinkLabels.vcru }</span>
             </Link>
-          </div>
+          </li>
         }
-
         { props.work.links.local &&
-          <div className={ styles.source } role="listitem">
+          <li className={ styles.source }>
             <Link
               href={ props.work.links.local }
               target={ "_blank" }
             >
-              { WorkLinkLabels.local }
+              <span className={ styles.sourselink }>{ WorkLinkLabels.local }</span>
             </Link>
-          </div>
+          </li>
         }
-      </div>
+      </ul>
+
+
+
+
+
     </li>
   )
 

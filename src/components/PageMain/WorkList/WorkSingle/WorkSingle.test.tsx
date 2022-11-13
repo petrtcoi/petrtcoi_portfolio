@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import WorkSingle from './WorkSingle'
-import { WorkLinkLabels } from '../../../../types/work.type'
 import { works } from '../../../../__tests__/data/works'
+import { WorkLinkLabels } from '../../../../assets/types/work.type'
 
 
 

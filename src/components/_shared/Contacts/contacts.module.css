@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+  width: 200px;
+}
+.row__icon {
+  align-self: center;
+  width: 40px;
+}
+.row__data {
+  padding: 0;
+  font-size: 0.8rem;
+}

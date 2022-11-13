@@ -1,11 +1,11 @@
 import React from "react"
 
-import HeadMeta from "./HeadMeta/HeadMeta"
-import Navbar from "./Navbar/Navbar"
+import HeadMetaTags from "./HeadMetaTags/HeadMetaTags"
 import Footer from "./Footer/Footer"
 
-import { setUiTheme } from "../../shared/helpers/setUiTheme"
-import { Theme } from "../../theme/theme.enum"
+import { setUiTheme } from "../../assets/utils/setUiTheme"
+import Header from "./Header/Header"
+import { ThemeColorSchema } from "../../assets/types/ui.type"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -15,25 +15,19 @@ const Layout = ({ children }: LayoutProps) => {
 
   const useSomeEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect
   useSomeEffect(() => {
-    setUiTheme(Theme.dark)
+    setUiTheme(ThemeColorSchema.dark)
   }, [])
 
 
   return (
     <>
-      <HeadMeta />
-      <div>
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          { children }
-        </main>
-        <footer>
-          <Footer />
-        </footer>
+      <HeadMetaTags />
+      <Header />
+      <main>
+        { children }
+      </main>
+      <Footer />
 
-      </div>
     </>
   )
 }

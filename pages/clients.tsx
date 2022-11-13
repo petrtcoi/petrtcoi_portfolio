@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import React from 'react'
 
-import dbData from '../src/backend/dbData'
+import dbData from '../src/server/dbData'
 import ClientsTable from '../src/components/PageClients/ClientsTable/ClientsTable'
 
 

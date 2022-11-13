@@ -1,16 +1,16 @@
 import { DecoratorFn } from "@storybook/react"
 import React from "react"
+import { setUiTheme } from '../../src/assets/utils/setUiTheme'
+import { ThemeColorSchema } from '../../src/assets/types/ui.type'
 
-import { Theme } from '../../src/theme/theme.enum'
-import { setUiTheme } from "./../../src/shared/helpers/setUiTheme"
 
 export const uiThemeDecorator: DecoratorFn = (Story, options) => {
   const { UiTheme } = options.args
 
-  if (UiTheme !== undefined && UiTheme in Theme) {
+  if (UiTheme !== undefined && UiTheme in ThemeColorSchema) {
     setUiTheme(UiTheme)
   } else {
-    setUiTheme(Theme.dark)
+    setUiTheme(ThemeColorSchema.dark)
   }
 
   return (

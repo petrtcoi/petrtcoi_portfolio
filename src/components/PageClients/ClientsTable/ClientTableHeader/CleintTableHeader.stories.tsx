@@ -3,8 +3,8 @@ import { Meta, Story } from '@storybook/react'
 
 import ClientTableHeader, { ClientTableHeaderProps } from './CleintTableHeader'
 
-import { UiThemeControl, UiThemeType } from '../../../../shared/helpers/storybookUiThemeControl'
-import { Theme } from '../../../../theme/theme.enum'
+import { UiThemeControl, UiThemeType } from '../../../../assets/utils/storybookUiThemeControl'
+import { ThemeColorSchema } from '../../../../assets/types/ui.type'
 
 
 
@@ -32,7 +32,7 @@ const Template: Story<ClientTableHeaderProps & UiThemeType> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {
-  UiTheme: Theme.dark,
+  UiTheme: ThemeColorSchema.dark,
   label: 'test'
 }
 
