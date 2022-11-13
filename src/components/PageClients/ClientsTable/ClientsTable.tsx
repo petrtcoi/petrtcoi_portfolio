@@ -1,5 +1,5 @@
 import React from 'react'
-import { Client } from '../../../types/database.type'
+import { Client } from '../../../assets/types/database.type'
 import ClientTableHeader from './ClientTableHeader/CleintTableHeader'
 
 type ClientsTableProps = {
