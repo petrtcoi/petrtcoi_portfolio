@@ -1,4 +1,4 @@
-import { Work } from "../../types/work.type"
+import { Work } from "../../assets/types/work.type"
 
 export const works: Work[] = [
     {
