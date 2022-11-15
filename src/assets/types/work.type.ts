@@ -8,7 +8,7 @@ export type Work = {
     title: string
     publishDate: string
     description: string
-    tags: string[]
+    keywords: string[]
     links: {[key in WorkLink]?: string}
 }
 

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { Work, WorkLinkLabels } from '../../../../assets/types/work.type'
+import Highlighted from '../../../../assets/ui-components/Highlighted/Highlighted'
 
 
 import styles from './work.module.css'
@@ -26,14 +27,14 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
       </div>
 
       <p aria-label="Описание работы" className={ "text--small no-margin" } >
-        { props.work.description }
+        <Highlighted
+          text={ props.work.description }
+          keywords={ props.work.keywords }
+          classString={ "text--green" }
+        />
       </p>
 
-      <p aria-label="Используемые технологии" className={ "text--small no-margin accent" }>
-        { props.work.tags.join(', ') }
-      </p>
-
-
+      
       <span
         style={ { display: "inline-block", marginTop: "20px" } }
         className="text--small text--grey no-margin"

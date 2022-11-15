@@ -13,9 +13,10 @@ test.describe('Theme swicthing', () => {
     let htmlTag: Locator
 
 
-    test.beforeAll(async ({ browser }) => {
+    test.beforeEach(async ({ browser }) => {
         page = await browser.newPage()
         await page.goto(pages.home)
+        
         themeSwitcher = page.getByRole('switch', { name: /переключение темы/i })
         burgerIcon = page.getByRole('button', { name: /открыть меню/i })
         htmlTag = page.locator('html')

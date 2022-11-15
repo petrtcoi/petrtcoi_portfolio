@@ -1,5 +1,5 @@
 import { test, expect, type Page, Locator } from '@playwright/test'
-import { isInViewport } from './helpers/isInViewport'
+import { isInScreenAxisX } from './helpers/isInScreenAxisX'
 import { pages } from './helpers/pages'
 import { changeThemeDuatationMs } from './helpers/variables'
 
@@ -12,7 +12,7 @@ test.describe('Работа кнопки открытия и закрытия м
     let popupMenu: Locator
     let closeMenuIcon: Locator
 
-    test.beforeAll(async ({ browser }) => {
+    test.beforeEach(async ({ browser }) => {
         page = await browser.newPage()
         await page.goto(pages.home)
 
@@ -32,7 +32,7 @@ test.describe('Работа кнопки открытия и закрытия м
         expect(opacity).toBe("0")
     })
     test("Popup menu расположено за размерами экрана", async () => {
-        const isIn = await isInViewport({ element: popupMenu, page })
+        const isIn = await isInScreenAxisX({ element: popupMenu, page })
         expect(isIn).toBe(false)
     })
 
@@ -45,7 +45,7 @@ test.describe('Работа кнопки открытия и закрытия м
     test("Popup menu находится в видимости экрана после клика по Burger", async () => {
         await burgerIcon.click()
         await page.waitForTimeout(changeThemeDuatationMs)
-        const isIn = await isInViewport({ element: popupMenu, page })
+        const isIn = await isInScreenAxisX({ element: popupMenu, page })
         expect(isIn).toBe(true)
     })
 

@@ -34,10 +34,6 @@ describe('Work Single', () => {
     expect(getDescription()).toHaveTextContent(workOne.description)
   })
 
-  test('Теги работы выводятся через запятую', async () => {
-    render(<WorkSingle work={ workOne } />)
-    expect(getTagsList()).toHaveTextContent(workOne.tags.join(', '))
-  })
 
   test('Выводит все ссылки на страницы', () => {
     render(<WorkSingle work={ workOne } />)
