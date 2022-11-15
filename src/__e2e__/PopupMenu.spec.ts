@@ -1,4 +1,5 @@
 import { test, expect, type Page, Locator } from '@playwright/test'
+import { isInViewport } from './helpers/isInViewport'
 import { pages } from './helpers/pages'
 import { changeThemeDuatationMs } from './helpers/variables'
 
@@ -30,14 +31,24 @@ test.describe('Работа кнопки открытия и закрытия м
         const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
         expect(opacity).toBe("0")
     })
+    test("Popup menu расположено за размерами экрана", async () => {
+        const isIn = await isInViewport({ element: popupMenu, page })
+        expect(isIn).toBe(false)
+    })
 
-    test("Меню открывается после клика по Burger", async () => {
+    test("Меню имеет свойство opactiy после клика по Burger", async () => {
         await burgerIcon.click()
         await page.waitForTimeout(changeThemeDuatationMs)
         const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
         expect(opacity).toBe("1")
-
     })
+    test("Popup menu находится в видимости экрана после клика по Burger", async () => {
+        await burgerIcon.click()
+        await page.waitForTimeout(changeThemeDuatationMs)
+        const isIn = await isInViewport({ element: popupMenu, page })
+        expect(isIn).toBe(true)
+    })
+
     test("Меню закрывается после клика по ClodeButton", async () => {
         await burgerIcon.click()
         await page.waitForTimeout(changeThemeDuatationMs)
