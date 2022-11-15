@@ -16,7 +16,7 @@ test.describe('Theme swicthing', () => {
     test.beforeAll(async ({ browser }) => {
         page = await browser.newPage()
         await page.goto(pages.home)
-        themeSwitcher = page.getByRole('switch', {name: /переключение темы/i})
+        themeSwitcher = page.getByRole('switch', { name: /переключение темы/i })
         burgerIcon = page.getByRole('button', { name: /открыть меню/i })
         htmlTag = page.locator('html')
     })
@@ -32,10 +32,11 @@ test.describe('Theme swicthing', () => {
     test("При загрузке страницы у тега <html> атрибут data-theme НЕ имеет занчение light", async () => {
         const theme = await htmlTag.getAttribute('data-theme')
         expect(theme).not.toBe(ThemeColorSchema.light)
-
+    })
+    test("Проверка screenshot dark_theme при начальной загрузке", async () => {
+        await htmlTag.getAttribute('data-theme')
         await expect(page).toHaveScreenshot('dark_theme.png')
     })
-
 
 
     test("Клик по ThemeSwitcher переключает для <html> атрибут data-theme в значение light", async () => {
@@ -44,10 +45,11 @@ test.describe('Theme swicthing', () => {
         await themeSwitcher.click()
         const theme = await htmlTag.getAttribute('data-theme')
         expect(theme).toBe(ThemeColorSchema.light)
-
+    })
+    test("Проверка screenshot light_theme после смены темы", async () => {
+        await htmlTag.getAttribute('data-theme')
         await expect(page).toHaveScreenshot('light_theme.png')
     })
-
 
 
     test("Клик по ThemeSwitcher второй раз вернет тему обратно на DARK", async () => {
@@ -59,7 +61,7 @@ test.describe('Theme swicthing', () => {
         const theme = await htmlTag.getAttribute('data-theme')
         expect(theme).toBe(ThemeColorSchema.dark)
     })
-
+   
 })
 
 

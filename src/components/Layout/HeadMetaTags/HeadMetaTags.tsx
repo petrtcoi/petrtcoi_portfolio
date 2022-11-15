@@ -24,7 +24,7 @@ const HeadMeta: React.FC<HeadMetaProps> = (_props) => {
                 <meta name="theme-color" content="#ffffff"></meta>
             </Head>
             <Script
-                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=G-Z972NPKMWH`}
                 strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
@@ -33,7 +33,7 @@ const HeadMeta: React.FC<HeadMetaProps> = (_props) => {
                     function gtag(){window.dataLayer.push(arguments);}
                     gtag('js', new Date());
 
-                    gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}');
+                    gtag('config', 'G-Z972NPKMWH');
                 `}
             </Script>
         </>
