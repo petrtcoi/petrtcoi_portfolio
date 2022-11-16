@@ -5,13 +5,11 @@
   margin-right: -350px;
   width: 300px;
   height: 100%;
-  opacity: 0; /* STATE */
   border-left: 1px solid var(--color-grey);
   background-color: var(--color-background);
   transition: margin var(--basic-duration),  opacity var(--basic-duration), background-color var(--basic-duration);
 }
 .popupmenu[data-state-popupmenu-status="open"] {
-  opacity: 100;
   margin-right: 0px;
   transition: margin var(--basic-duration), background-color var(--basic-duration);
 }
