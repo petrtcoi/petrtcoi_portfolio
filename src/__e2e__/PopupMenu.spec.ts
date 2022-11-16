@@ -1,7 +1,7 @@
 import { test, expect, type Page, Locator } from '@playwright/test'
-import { isInScreenAxisX } from './helpers/isInScreenAxisX'
-import { pages } from './helpers/pages'
-import { changeThemeDuatationMs } from './helpers/variables'
+import { isInScreenAxisX } from './utils/isInScreenAxisX'
+import { pages } from './utils/pages'
+import { changeThemeDuatationMs } from './utils/variables'
 
 
 
@@ -27,20 +27,9 @@ test.describe('Работа кнопки открытия и закрытия м
         await expect(closeMenuIcon).toBeVisible()
     })
 
-    test("Меню изначально имеет opacity: 0", async () => {
-        const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
-        expect(opacity).toBe("0")
-    })
     test("Popup menu расположено за размерами экрана", async () => {
         const isIn = await isInScreenAxisX({ element: popupMenu, page })
         expect(isIn).toBe(false)
-    })
-
-    test("Меню имеет свойство opactiy после клика по Burger", async () => {
-        await burgerIcon.click()
-        await page.waitForTimeout(changeThemeDuatationMs)
-        const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
-        expect(opacity).toBe("1")
     })
     test("Popup menu находится в видимости экрана после клика по Burger", async () => {
         await burgerIcon.click()
@@ -48,13 +37,12 @@ test.describe('Работа кнопки открытия и закрытия м
         const isIn = await isInScreenAxisX({ element: popupMenu, page })
         expect(isIn).toBe(true)
     })
-
     test("Меню закрывается после клика по ClodeButton", async () => {
         await burgerIcon.click()
         await page.waitForTimeout(changeThemeDuatationMs)
         await closeMenuIcon.click()
         await page.waitForTimeout(changeThemeDuatationMs * 2)
-        const opacity = await popupMenu.evaluate(node => getComputedStyle(node).opacity)
-        expect(opacity).toBe("0")
+        const isIn = await isInScreenAxisX({ element: popupMenu, page })
+        expect(isIn).toBe(false)
     })
 })

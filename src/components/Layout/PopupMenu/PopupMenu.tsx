@@ -18,7 +18,7 @@ const PopupMenu: React.FC<PopupMenuProps> = (props) => {
     return (
         <nav
             id="popupmenu"
-            data-state-popupmenu-status={ props.menuStatus }
+            
             aria-label="Popup меню"
             className={ styles.popupmenu }
             style={ { zIndex: 1000 } }

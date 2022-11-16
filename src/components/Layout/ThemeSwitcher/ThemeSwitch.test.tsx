@@ -17,9 +17,6 @@ const getSwitcher = () => screen.getByRole('switch', { name: /переключе
 const getCheckbox = () => getSwitcher().firstChild as HTMLInputElement
 
 describe('ThemeSwitcher', () => {
-
-
-
   
   beforeEach(() => render(<ThemeSwitcher />))
   afterEach(() => { jest.clearAllMocks() })
