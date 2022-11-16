@@ -30,7 +30,7 @@ const WorkSingle: React.FC<WorkSingleProps> = (props) => {
         <Highlighted
           text={ props.work.description }
           keywords={ props.work.keywords }
-          classString={ "text--green" }
+          classString={ "text--green text--bold" }
         />
       </p>
 
