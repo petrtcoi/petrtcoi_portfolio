@@ -32,8 +32,7 @@ const Template: Story<ClientTableHeaderProps & UiThemeType> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {
-  UiTheme: ThemeColorSchema.dark,
-  label: 'test'
+  UiTheme: ThemeColorSchema.dark
 }
 
 export const DefaultMobile = Template.bind({})

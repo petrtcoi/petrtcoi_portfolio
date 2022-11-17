@@ -7,7 +7,7 @@ import Highlighted from '../../../../assets/ui-components/Highlighted/Highlighte
 import styles from './work.module.css'
 
 
-type WorkSingleProps = {
+export type WorkSingleProps = {
   work: Work
 }
 
