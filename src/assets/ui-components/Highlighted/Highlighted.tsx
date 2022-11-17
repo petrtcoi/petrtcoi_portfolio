@@ -13,6 +13,7 @@ const Highlighted: React.FC<HighlightedProps> = (props) => {
   const matches = props.text.match(regex)
   const splitedText = props.text.split(regex)
 
+
   if (matches === null) return (<>{ props.text }</>)
   return (
     <>
