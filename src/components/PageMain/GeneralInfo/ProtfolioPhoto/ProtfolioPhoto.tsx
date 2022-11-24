@@ -11,7 +11,7 @@ const PortfolioPhoto: React.FC<PortfolioPhotoProps> = (_props) => {
       <Image
         priority={ true }
         fill
-        src={ "/images/photo.jpg" }
+        src={ "/images/portfolio-image.jpg" }
         sizes={ "300px" }
         alt={ "Фотография Petr Tcoi для портфолио" }
         title={ "Моя фотография. Я люблю React" }
