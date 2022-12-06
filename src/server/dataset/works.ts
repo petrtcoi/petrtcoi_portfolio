@@ -34,4 +34,15 @@ export const works: Work[] = [
             // local: 'page_1'
         }
     },
+    {
+        publishDate: '06.12.2022',
+        title: 'Тестирование с помощью Storybook',
+        description: 'Заключительная статья про тестирование. Базовая настройка Storybook. Подключение выбора темы. Виузальное тестированеи с помощью Chromatic.',
+        keywords: ['storybook'],
+        links: {
+            devto: 'https://dev.to/petrtcoi/tiestirovaniie-react-chast-3-storybook-4pnc',
+            vcru: 'https://vc.ru/u/206685-petr-tcoi/555968-testirovanie-react-chast-3-storybook',
+            // local: 'page_1'
+        }
+    },
 ]
