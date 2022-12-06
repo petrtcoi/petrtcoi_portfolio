@@ -3,8 +3,6 @@ import { uiThemeDecorator } from './decorators/uiThemeDecorator'
 import '../src/assets/styles/_styles.css'
 
 
-
-
 const customViewports = {
   desktop: {
     name: 'Desktop',

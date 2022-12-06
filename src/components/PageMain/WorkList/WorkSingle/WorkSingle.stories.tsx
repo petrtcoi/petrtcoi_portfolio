@@ -1,7 +1,6 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
 
-
 import WorkSingle from './WorkSingle'
 import { WorkSingleProps } from './WorkSingle'
 import { Work } from '../../../../assets/types/work.type'
