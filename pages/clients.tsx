@@ -1,15 +1,27 @@
 import type { NextPage } from 'next'
 import React from 'react'
 
-import dbData from '../src/server/dbData'
 import ClientsTable from '../src/components/PageClients/ClientsTable/ClientsTable'
+import { useAppDispatch } from '../src/redux/hooks'
+import { fetchInitialData } from '../src/redux/slices/aircompany/aircompanySlice'
+import { fetchEntity } from '../src/server/api'
 
 
 type ClientsPageProps = {}
 
 const ClientsPage: NextPage<ClientsPageProps> = (_props) => {
 
-    React.useEffect(() => console.log(dbData), [])
+    const dispatch = useAppDispatch()
+
+    React.useEffect(() => {
+        
+        (async () => {
+            dispatch(fetchInitialData())
+        })()
+        
+    }, [])
+
+
 
     return (
         <div data-testid="page-clients">

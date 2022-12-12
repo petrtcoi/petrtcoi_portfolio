@@ -1,0 +1,87 @@
+import { createSlice, current } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import * as R from 'ramda'
+
+import { Airplane, Client, Flight } from '../../../assets/types/database.type'
+import { FetchingStatus } from './types/types'
+
+import { fetchInitialData } from './asyncThunks/fetchInitialData'
+
+
+
+
+export type AircompanyState = {
+  fetchingStatus: FetchingStatus,
+  clients: {
+    byId: { [clientId: string]: Client },
+  },
+  airplanes: {
+    byId: { [sirplaneId: string]: Airplane },
+  },
+  flights: {
+    byId: { [flightId: string]: Flight },
+    ids: Flight['id'][]
+  },
+}
+
+
+const initialState: AircompanyState = {
+  fetchingStatus: 'Idle',
+  clients: { byId: {} },
+  airplanes: { byId: {} },
+  flights: { byId: {}, ids: [] }
+}
+
+
+export const aircompanySlice = createSlice({
+  name: 'aircompany',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+
+
+    builder.addCase(fetchInitialData.pending, (state, _action) => {
+      const _state = current(state)
+      return R.set(R.lensProp('fetchingStatus'), 'Fetching', _state)
+    })
+
+    builder.addCase(fetchInitialData.fulfilled, (state, action) => {
+      const _state: AircompanyState = current(state)
+      return R.pipe(
+        R.always(_state),
+        R.mergeLeft(action.payload as unknown as AircompanyState),
+        R.set(R.lensProp('fetchingStatus'), 'Success')
+      )()
+    })
+
+    builder.addCase(fetchInitialData.rejected, (state, action) => {
+      console.log(action.error.message)
+      const _state = current(state)
+      return R.set(R.lensProp('fetchingStatus'), 'Error', _state)
+    })
+
+    // builder.addCase(fetchAllWorks.fulfilled, (state: WorksState, action) => {
+    //   const _state: WorksState = current(state)
+    //   return R.pipe(
+    //     R.always(_state),
+    //     R.mergeLeft(action.payload),
+    //     R.set(R.lensPath(['onWork', onWork.fetchAllWorks()]), undefined),
+    //     (data: any) => updateSuperStatusDownfall(data.rootWorkId, data),
+    //   )()
+    // })
+
+    // builder.addCase(fetchAllWorks.rejected, (state: WorksState, action) => {
+    //   const errorLog = logError(null, 'fetchAllWorks', action.error.message)
+    //   const _state: WorksState = current(state)
+    //   return R.pipe(
+    //     R.always(_state),
+    //     R.set(R.lensPath(['onWork', onWork.fetchAllWorks()]), undefined),
+    //     R.set(R.lensPath(['errorLogs']), R.append(errorLog, _state.errorLogs)),
+    //   )()
+    // })
+  },
+})
+
+
+export { fetchInitialData }
+export default aircompanySlice.reducer
