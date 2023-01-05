@@ -1,5 +1,4 @@
 import { createSlice, current } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 import * as R from 'ramda'
 
 import { Airplane, Client, Flight } from '../../../assets/types/database.type'
@@ -39,25 +38,23 @@ export const aircompanySlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
 
+builder.addCase(fetchInitialData.pending, (stateProxy, _action) => {
+  const state = current(stateProxy)
+  return R.set(R.lensProp('fetchingStatus'), 'Fetching', state)
+})
 
-    builder.addCase(fetchInitialData.pending, (state, _action) => {
-      const _state = current(state)
-      return R.set(R.lensProp('fetchingStatus'), 'Fetching', _state)
-    })
-
-    builder.addCase(fetchInitialData.fulfilled, (state, action) => {
-      const _state: AircompanyState = current(state)
+    builder.addCase(fetchInitialData.fulfilled, (stateProxy, action) => {
+      const state: AircompanyState = current(stateProxy)
       return R.pipe(
-        R.always(_state),
+        R.always(state),
         R.mergeLeft(action.payload as unknown as AircompanyState),
         R.set(R.lensProp('fetchingStatus'), 'Success')
       )()
     })
 
-    builder.addCase(fetchInitialData.rejected, (state, action) => {
-      console.log(action.error.message)
-      const _state = current(state)
-      return R.set(R.lensProp('fetchingStatus'), 'Error', _state)
+    builder.addCase(fetchInitialData.rejected, (stateProxy, action) => {
+      const state = current(stateProxy)
+      return R.set(R.lensProp('fetchingStatus'), 'Error', state)
     })
 
     // builder.addCase(fetchAllWorks.fulfilled, (state: WorksState, action) => {
