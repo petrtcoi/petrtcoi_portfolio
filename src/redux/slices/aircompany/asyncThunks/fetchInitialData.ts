@@ -10,15 +10,13 @@ type FetchedInitialState = Pick<AircompanyState, 'airplanes' | 'clients' | 'flig
 
 
 
-export const fetchInitialData = createAsyncThunk<Promise<Pick<AircompanyState, 'airplanes' | 'clients' | 'flights'>>>(
+export const fetchInitialData = createAsyncThunk<Pick<AircompanyState, 'airplanes' | 'clients' | 'flights'>>(
   'aircompany/fetchInitialData',
   async () => {
 
     const clients = await getEntityByIdsData<Client>('clients');
     const airplanes = await getEntityByIdsData<Airplane>('airplanes');
     const flights = await getEntityByIdsData<Flight>('flights');
-
-    console.log('data: ', flights.data);
 
     return {
       clients: { byId: clients.byId },

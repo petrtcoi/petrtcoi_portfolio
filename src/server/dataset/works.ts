@@ -45,4 +45,15 @@ export const works: Work[] = [
             // local: 'page_1'
         }
     },
+    {
+        publishDate: '05.01.2023',
+        title: 'Немного Ramda для React и Redux',
+        description: 'Короткий обзор возможных вариантов использования Ramda с React / Redux. Мои первые эксперименты с данной библиотекой.',
+        keywords: ['ramda'],
+        links: {
+            devto: 'https://dev.to/petrtcoi/niemnogho-ramda-dlia-react-i-redux-3id6',
+            vcru: 'https://vc.ru/u/206685-petr-tcoi/577176-nemnogo-ramda-dlya-react-i-redux',
+            // local: 'page_1'
+        }
+    },
 ]

@@ -43,14 +43,14 @@ builder.addCase(fetchInitialData.pending, (stateProxy, _action) => {
   return R.set(R.lensProp('fetchingStatus'), 'Fetching', state)
 })
 
-    builder.addCase(fetchInitialData.fulfilled, (stateProxy, action) => {
-      const state: AircompanyState = current(stateProxy)
-      return R.pipe(
-        R.always(state),
-        R.mergeLeft(action.payload as unknown as AircompanyState),
-        R.set(R.lensProp('fetchingStatus'), 'Success')
-      )()
-    })
+builder.addCase(fetchInitialData.fulfilled, (stateProxy, action) => {
+  const state: AircompanyState = current(stateProxy)
+  return R.pipe(
+    R.always(state),
+    R.mergeLeft(action.payload),
+    R.set(R.lensProp('fetchingStatus'), 'Success')
+  )()
+})
 
     builder.addCase(fetchInitialData.rejected, (stateProxy, action) => {
       const state = current(stateProxy)
